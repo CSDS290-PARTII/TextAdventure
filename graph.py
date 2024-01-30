@@ -17,7 +17,7 @@ G.add_nodes_from(nodes)
 G.add_edges_from(edges)
 
 # Define the layout for the graph
-pos = nx.spring_layout(G, seed=42)  # Seed for reproducible layout
+pos = nx.spring_layout(G, seed=42)  
 
 # Draw the graph
 nx.draw(G, pos, with_labels=True, node_color="skyblue", node_size=2000, font_size=10, font_weight="bold")
