@@ -2,12 +2,19 @@
 <asl version="580">
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
-  <game name="Forgotten Star">
+  <game name="The Forgotten Star">
     <gameid>8de6c236-bc59-4d7d-9a4c-e784a5eae42e</gameid>
     <version>1.0</version>
     <firstpublished>2024</firstpublished>
     <author>Alex DelGarbino, Ziang Li, Ricky Lin, Oliver Yuan</author>
     <category>Sci-Fi</category>
+    <povstatusattributes type="stringdictionary">
+      <item>
+        <key>Cooper</key>
+        <value></value>
+      </item>
+    </povstatusattributes>
+    <pov type="object">player</pov>
   </game>
   <object name="room">
     <inherit name="editor_room" />
@@ -16,5 +23,13 @@
       <inherit name="editor_object" />
       <inherit name="editor_player" />
     </object>
+  </object>
+  <object name="Crushed Place">
+    <inherit name="editor_room" />
+    <alias>crushed place</alias>
+    <descprefix>You find yourself in</descprefix>
+    <objectslistprefix>Around you, there are</objectslistprefix>
+    <dropdestination type="object">Crushed Place</dropdestination>
+    <description><![CDATA[You find yourself in the <b>Crushed Place</b>. The air smells of scorched metal. Your first look around reveals the remnants of your spacecraft and alien technology, unfamiliar yet intriguing. The sight strengthens your resolve to survive. Ahead, ruins whisper promises of secrets and perhaps a way forward on this unknown planet.]]></description>
   </object>
 </asl>
