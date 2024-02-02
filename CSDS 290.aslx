@@ -30,12 +30,57 @@
       <inherit name="editor_player" />
       <inherit name="male" />
     </object>
+    <exit alias="east" to="room1">
+      <inherit name="eastdirection" />
+    </exit>
   </object>
   <object name="room1">
     <inherit name="editor_room" />
+    <alias>the first room</alias>
+    <dropdestination type="object">room1</dropdestination>
+    <exit alias="west" to="Crushed Place">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="east" to="room2">
+      <inherit name="eastdirection" />
+    </exit>
+    <object name="Box">
+      <inherit name="editor_object" />
+      <inherit name="openable" />
+      <listalias type="string"></listalias>
+      <displayverbs type="stringlist">
+        <value>Open</value>
+        <value>Close</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <usestandardverblist />
+      <useindividualverblist type="boolean">false</useindividualverblist>
+      <feature_container />
+      <close />
+      <alias>box</alias>
+      <take type="boolean">false</take>
+      <openscript type="script">
+        AddToInventory (Translation Prism)
+        msg ("You find a Translation Prism and take it.")
+      </openscript>
+      <object name="Translation Prism">
+        <inherit name="editor_object" />
+        <feature_usegive />
+        <selfuseon type="scriptdictionary" />
+        <take />
+      </object>
+    </object>
   </object>
   <object name="room2">
     <inherit name="editor_room" />
+    <alias>the second room</alias>
+    <dropdestination type="object">room2</dropdestination>
+    <exit alias="west" to="room1">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="north" to="room3">
+      <inherit name="northdirection" />
+    </exit>
   </object>
   <object name="room3">
     <inherit name="editor_room" />
@@ -61,6 +106,8 @@
     </object>
     <exit alias="north" to="room5">
       <inherit name="northdirection" />
+    <exit alias="south" to="room2">
+      <inherit name="southdirection" />
     </exit>
   </object>
   <object name="room4">
@@ -95,11 +142,15 @@
   </object>
   <object name="room6">
     <inherit name="editor_room" />
+    <alias>the sixth room</alias>
+    <dropdestination type="object">room6</dropdestination>
   </object>
   <object name="room7">
     <inherit name="editor_room" />
   </object>
   <object name="room8">
     <inherit name="editor_room" />
+    <alias>the eighth room</alias>
+    <dropdestination type="object">room8</dropdestination>
   </object>
 </asl>
