@@ -15,6 +15,7 @@
       </item>
     </povstatusattributes>
     <pov type="object">player</pov>
+    <showtitle />
   </game>
   <object name="room">
     <inherit name="editor_room" />
