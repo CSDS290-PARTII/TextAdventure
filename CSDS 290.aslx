@@ -14,8 +14,8 @@
         <value></value>
       </item>
     </povstatusattributes>
-    <pov type="object">player</pov>
     <showtitle />
+    <pov type="object">player</pov>
   </game>
   <object name="room">
     <inherit name="editor_room" />
@@ -30,7 +30,7 @@
     <alias>crushed place</alias>
     <descprefix>You find yourself in</descprefix>
     <objectslistprefix>Around you, there are</objectslistprefix>
-    <dropdestination type="object">Crushed Place</dropdestination>
     <description><![CDATA[You find yourself in the <b>Crushed Place</b>. The air smells of scorched metal. Your first look around reveals the remnants of your spacecraft and alien technology, unfamiliar yet intriguing. The sight strengthens your resolve to survive. Ahead, ruins whisper promises of secrets and perhaps a way forward on this unknown planet.]]></description>
+    <dropdestination type="object">Crushed Place</dropdestination>
   </object>
 </asl>
