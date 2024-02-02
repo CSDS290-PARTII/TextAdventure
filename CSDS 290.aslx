@@ -28,6 +28,31 @@
     <object name="player">
       <inherit name="editor_object" />
       <inherit name="editor_player" />
+      <inherit name="male" />
     </object>
+  </object>
+  <object name="room1">
+    <inherit name="editor_room" />
+  </object>
+  <object name="room2">
+    <inherit name="editor_room" />
+  </object>
+  <object name="room3">
+    <inherit name="editor_room" />
+  </object>
+  <object name="room4">
+    <inherit name="editor_room" />
+  </object>
+  <object name="room5">
+    <inherit name="editor_room" />
+  </object>
+  <object name="room6">
+    <inherit name="editor_room" />
+  </object>
+  <object name="room7">
+    <inherit name="editor_room" />
+  </object>
+  <object name="room8">
+    <inherit name="editor_room" />
   </object>
 </asl>
