@@ -84,15 +84,61 @@
   </object>
   <object name="room3">
     <inherit name="editor_room" />
+    <object name="capsule">
+      <inherit name="editor_object" />
+      <inherit name="container_open" />
+      <look><![CDATA[<i>A capsule might contain something!!</i>]]></look>
+      <feature_container />
+      <close type="boolean">false</close>
+      <listchildren type="boolean">false</listchildren>
+      <listchildrenprefix>It contains a Gravity Boots</listchildrenprefix>
+      <onopen type="script">
+        AddToInventory (capsule)
+      </onopen>
+      <openmsg>It contains a Gravity Boots</openmsg>
+      <keycount type="int">1</keycount>
+      <object name="Gravity Boots">
+        <inherit name="editor_object" />
+        <isroom type="boolean">false</isroom>
+        <usedefaultprefix />
+        <scenery />
+      </object>
+    </object>
+    <exit alias="north" to="room5">
+      <inherit name="northdirection" />
     <exit alias="south" to="room2">
       <inherit name="southdirection" />
     </exit>
   </object>
   <object name="room4">
     <inherit name="editor_room" />
+    <object name="Four Stone Columns">
+      <inherit name="editor_object" />
+    </object>
   </object>
   <object name="room5">
     <inherit name="editor_room" />
+    <object name="Energy Core">
+      <inherit name="editor_object" />
+      <take />
+      <takemsg>You pick up the energy core</takemsg>
+      <ontake type="script">
+        AddToInventory (Energy Core)
+      </ontake>
+      <not_all />
+      <dropmsg>You drop the energy core</dropmsg>
+      <ondrop type="script">
+      </ondrop>
+      <look><![CDATA[<i><b>It is one of the crictical item to fix your spaceship!!</b></i>]]></look>
+      <feature_usegive />
+      <selfuseon type="scriptdictionary" />
+      <use type="script">
+        MoveObject (Energy Core, )
+      </use>
+    </object>
+    <exit alias="south" to="room3">
+      <inherit name="southdirection" />
+    </exit>
   </object>
   <object name="room6">
     <inherit name="editor_room" />
