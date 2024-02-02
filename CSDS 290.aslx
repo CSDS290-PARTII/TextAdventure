@@ -1,22 +1,20 @@
+<!--Saved by Quest 5.8.6836.13983-->
 <asl version="580">
-
-  <include ref="English.aslx"/>
-  <include ref="Core.aslx"/>
-
-  <game name="CSDS 290">
+  <include ref="English.aslx" />
+  <include ref="Core.aslx" />
+  <game name="Forgotten Star">
     <gameid>8de6c236-bc59-4d7d-9a4c-e784a5eae42e</gameid>
     <version>1.0</version>
     <firstpublished>2024</firstpublished>
+    <author>Alex DelGarbino, Ziang Li, Ricky Lin, Oliver Yuan</author>
+    <category>Sci-Fi</category>
   </game>
-
   <object name="room">
     <inherit name="editor_room" />
     <isroom />
-
     <object name="player">
       <inherit name="editor_object" />
       <inherit name="editor_player" />
     </object>
   </object>
-
 </asl>
