@@ -30,72 +30,15 @@
       <inherit name="editor_player" />
       <inherit name="male" />
     </object>
-<<<<<<< Updated upstream
-    <exit alias="east" to="room3">
-=======
-<<<<<<< HEAD
-    <exit alias="east" to="room3">
-=======
-    <exit alias="east" to="room1">
->>>>>>> 5c150dce4935a5392dda7d340811e56d81a028a2
->>>>>>> Stashed changes
-      <inherit name="eastdirection" />
-    </exit>
   </object>
   <object name="room1">
     <inherit name="editor_room" />
-    <alias>the first room</alias>
-    <dropdestination type="object">room1</dropdestination>
-    <exit alias="west" to="Crushed Place">
-      <inherit name="westdirection" />
-    </exit>
-    <exit alias="east" to="room2">
-      <inherit name="eastdirection" />
-    </exit>
-    <object name="Box">
-      <inherit name="editor_object" />
-      <inherit name="openable" />
-      <listalias type="string"></listalias>
-      <displayverbs type="stringlist">
-        <value>Open</value>
-        <value>Close</value>
-      </displayverbs>
-      <inventoryverbs type="stringlist" />
-      <usestandardverblist />
-      <useindividualverblist type="boolean">false</useindividualverblist>
-      <feature_container />
-      <close />
-      <alias>box</alias>
-      <take type="boolean">false</take>
-      <openscript type="script">
-        AddToInventory (Translation Prism)
-        msg ("You find a Translation Prism and take it.")
-      </openscript>
-      <object name="Translation Prism">
-        <inherit name="editor_object" />
-        <feature_usegive />
-        <selfuseon type="scriptdictionary" />
-        <take />
-      </object>
-    </object>
   </object>
   <object name="room2">
     <inherit name="editor_room" />
-    <alias>the second room</alias>
-    <dropdestination type="object">room2</dropdestination>
-    <exit alias="west" to="room1">
-      <inherit name="westdirection" />
-    </exit>
-    <exit alias="north" to="room3">
-      <inherit name="northdirection" />
-    </exit>
   </object>
   <object name="room3">
     <inherit name="editor_room" />
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
     <object name="capsule">
       <inherit name="editor_object" />
       <inherit name="container_open" />
@@ -118,17 +61,13 @@
     </object>
     <exit alias="north" to="room5">
       <inherit name="northdirection" />
-<<<<<<< Updated upstream
-=======
-=======
-    <exit alias="south" to="room2">
-      <inherit name="southdirection" />
->>>>>>> 5c150dce4935a5392dda7d340811e56d81a028a2
->>>>>>> Stashed changes
     </exit>
   </object>
   <object name="room4">
     <inherit name="editor_room" />
+    <object name="Four Stone Columns">
+      <inherit name="editor_object" />
+    </object>
   </object>
   <object name="room5">
     <inherit name="editor_room" />
@@ -144,6 +83,11 @@
       <ondrop type="script">
       </ondrop>
       <look><![CDATA[<i><b>It is one of the crictical item to fix your spaceship!!</b></i>]]></look>
+      <feature_usegive />
+      <selfuseon type="scriptdictionary" />
+      <use type="script">
+        MoveObject (Energy Core, )
+      </use>
     </object>
     <exit alias="south" to="room3">
       <inherit name="southdirection" />
@@ -151,15 +95,11 @@
   </object>
   <object name="room6">
     <inherit name="editor_room" />
-    <alias>the sixth room</alias>
-    <dropdestination type="object">room6</dropdestination>
   </object>
   <object name="room7">
     <inherit name="editor_room" />
   </object>
   <object name="room8">
     <inherit name="editor_room" />
-    <alias>the eighth room</alias>
-    <dropdestination type="object">room8</dropdestination>
   </object>
 </asl>
