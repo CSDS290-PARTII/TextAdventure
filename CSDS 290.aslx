@@ -65,6 +65,7 @@
       <close type="boolean">false</close>
       <alias>box</alias>
       <take type="boolean">false</take>
+      <isopen type="boolean">false</isopen>
       <openscript type="script">
         if (Contains (Box,Translation Prism)) {
           AddToInventory (Translation Prism)
@@ -72,7 +73,6 @@
           RemoveObject (Box)
         }
       </openscript>
-      <isopen type="boolean">false</isopen>
       <object name="Translation Prism">
         <inherit name="editor_object" />
         <feature_usegive />
@@ -118,13 +118,13 @@
     <object name="Repairing Agent">
       <inherit name="editor_object" />
       <feature_usegive />
-      <selfuseon type="scriptdictionary" />
       <displayverbs type="stringlist">
         <value>Take</value>
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <visible type="boolean">false</visible>
       <take />
+      <selfuseon type="scriptdictionary" />
     </object>
   </object>
   <object name="room3">
@@ -136,6 +136,9 @@
     <exit alias="west" to="room4">
       <inherit name="westdirection" />
     </exit>
+    <object name="Capsule">
+      <inherit name="editor_object" />
+    </object>
   </object>
   <object name="room4">
     <inherit name="editor_room" />
