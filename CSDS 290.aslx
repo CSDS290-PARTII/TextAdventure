@@ -36,12 +36,12 @@
   </object>
   <object name="room1">
     <inherit name="editor_room" />
-    <alias>the first room</alias>
+    <alias>first room</alias>
     <dropdestination type="object">room1</dropdestination>
-    <exit alias="west" to="Crushed Place">
+    <exit alias="outside" to="Crushed Place">
       <inherit name="westdirection" />
     </exit>
-    <exit alias="east" to="room2">
+    <exit alias="further in" to="room2">
       <inherit name="eastdirection" />
     </exit>
     <object name="Box">
@@ -73,7 +73,7 @@
   </object>
   <object name="room2">
     <inherit name="editor_room" />
-    <alias>the second room</alias>
+    <alias>second room</alias>
     <dropdestination type="object">room2</dropdestination>
     <exit alias="west" to="room1">
       <inherit name="westdirection" />
@@ -84,27 +84,31 @@
   </object>
   <object name="room3">
     <inherit name="editor_room" />
+    <alias>third room</alias>
     <exit alias="south" to="room2">
       <inherit name="southdirection" />
     </exit>
   </object>
   <object name="room4">
     <inherit name="editor_room" />
+    <alias>fourth room</alias>
   </object>
   <object name="room5">
     <inherit name="editor_room" />
+    <alias>fifth room</alias>
   </object>
   <object name="room6">
     <inherit name="editor_room" />
-    <alias>the sixth room</alias>
+    <alias>sixth room</alias>
     <dropdestination type="object">room6</dropdestination>
   </object>
   <object name="room7">
     <inherit name="editor_room" />
+    <alias>seventh room</alias>
   </object>
   <object name="room8">
     <inherit name="editor_room" />
-    <alias>the eighth room</alias>
+    <alias>eighth room</alias>
     <dropdestination type="object">room8</dropdestination>
   </object>
 </asl>
