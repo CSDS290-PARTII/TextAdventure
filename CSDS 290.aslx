@@ -247,7 +247,7 @@
       <usedefaultprefix />
       <useon type="scriptdictionary">
         <item key="Translation Prism">
-          msg ("The symbol disappears.")
+          msg ("The foreign symbol disappears.")
         </item>
       </useon>
     </object>
@@ -294,6 +294,57 @@
         <value>Push</value>
       </displayverbs>
       <inventoryverbs type="stringlist" />
+      <push type="script">
+        msg ("You died!")
+        finish
+      </push>
+    </object>
+    <object name="Air Button">
+      <inherit name="editor_object" />
+      <alias>air button</alias>
+      <displayverbs type="stringlist">
+        <value>Push</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <push type="script">
+        MakeObjectVisible (Atmospheric Stabilizer)
+      </push>
+    </object>
+    <object name="Fire Button">
+      <inherit name="editor_object" />
+      <alias>fire button</alias>
+      <displayverbs type="stringlist">
+        <value>Push</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <push type="script">
+        msg ("You died!")
+        finish
+      </push>
+    </object>
+    <object name="Water Button">
+      <inherit name="editor_object" />
+      <alias>water button</alias>
+      <displayverbs type="stringlist">
+        <value>Push</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <push type="script">
+        msg ("You died!")
+        finish
+      </push>
+    </object>
+    <object name="Atmospheric Stabilizer">
+      <inherit name="editor_object" />
+      <visible type="boolean">false</visible>
+      <displayverbs type="stringlist">
+        <value>Take</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist">
+        <value>Drop</value>
+      </inventoryverbs>
+      <take />
+      <feature_usegive />
     </object>
   </object>
   <object name="room5">
