@@ -44,6 +44,7 @@
   <object name="room1">
     <inherit name="editor_room" />
     <alias>first room</alias>
+    <description type="string"></description>
     <dropdestination type="object">room1</dropdestination>
     <description type="string"></description>
     <exit alias="outside" to="Crushed Place">
@@ -85,6 +86,7 @@
   <object name="room2">
     <inherit name="editor_room" />
     <alias>second room</alias>
+    <description type="string"></description>
     <dropdestination type="object">room2</dropdestination>
     <description type="string"></description>
     <exit alias="west" to="room1">
@@ -145,8 +147,13 @@
   <object name="room3">
     <inherit name="editor_room" />
     <alias>third room</alias>
+<<<<<<< HEAD
     <dropdestination type="object">room3</dropdestination>
     <description type="string"></description>
+=======
+    <description type="string"></description>
+    <dropdestination type="object">room3</dropdestination>
+>>>>>>> alex-branch
     <exit alias="south" to="room2">
       <inherit name="southdirection" />
     </exit>
@@ -162,6 +169,21 @@
       <autoopen type="boolean">false</autoopen>
       <keycount type="int">1</keycount>
       <take type="boolean">false</take>
+<<<<<<< HEAD
+=======
+      <open />
+      <transparent type="boolean">false</transparent>
+      <visible />
+      <scenery type="boolean">false</scenery>
+      <attr name="feature_usegive" type="boolean">false</attr>
+      <canlockopen type="boolean">false</canlockopen>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+        <value>Take</value>
+        <value>Open</value>
+      </displayverbs>
+      <look><![CDATA[<i>It might contain something</i>]]></look>
+>>>>>>> alex-branch
       <addscript type="script">
       </addscript>
       <onopen type="script">
@@ -176,6 +198,7 @@
           msg ("There is nothing inside")
         }
       </onopen>
+<<<<<<< HEAD
       <open />
       <transparent type="boolean">false</transparent>
       <visible />
@@ -188,6 +211,8 @@
         <value>Open</value>
       </displayverbs>
       <look><![CDATA[<i>It might contain something</i>]]></look>
+=======
+>>>>>>> alex-branch
       <object name="Gravity Boots">
         <inherit name="editor_object" />
       </object>
@@ -202,10 +227,88 @@
       <inherit name="eastdirection" />
     </exit>
     <object name="Four Stone Columns">
+    <object name="Column 1">
       <inherit name="editor_object" />
       <object name="Atomospheric Stabilizer">
         <inherit name="editor_object" />
       </object>
+      <visible />
+      <alias>first column</alias>
+      <drop type="boolean">false</drop>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <feature_usegive />
+      <look>The column shows a foreign symbol.</look>
+      <usedefaultprefix />
+      <useon type="scriptdictionary">
+        <item key="Translation Prism">
+          msg ("A symbol for \"Earth\" surfaces.")
+        </item>
+      </useon>
+    </object>
+    <object name="Column 2">
+      <inherit name="editor_object" />
+      <visible />
+      <alias>second column</alias>
+      <drop type="boolean">false</drop>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <feature_usegive />
+      <look>The column shows a foreign symbol.</look>
+      <usedefaultprefix />
+      <useon type="scriptdictionary">
+        <item key="Translation Prism">
+          msg ("The symbol disappears.")
+        </item>
+      </useon>
+    </object>
+    <object name="Column 3">
+      <inherit name="editor_object" />
+      <visible />
+      <alias>third column</alias>
+      <drop type="boolean">false</drop>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <feature_usegive />
+      <look>The column shows a foreign symbol.</look>
+      <usedefaultprefix />
+      <useon type="scriptdictionary">
+        <item key="Translation Prism">
+          msg ("A symbol for \"Fire\" surfaces.")
+        </item>
+      </useon>
+    </object>
+    <object name="Column 4">
+      <inherit name="editor_object" />
+      <visible />
+      <alias>fourth column</alias>
+      <drop type="boolean">false</drop>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <feature_usegive />
+      <look>The column shows a foreign symbol.</look>
+      <usedefaultprefix />
+      <useon type="scriptdictionary">
+        <item key="Translation Prism">
+          msg ("A symbol for \"Water\" surfaces.")
+        </item>
+      </useon>
+    </object>
+    <object name="Earth Button">
+      <inherit name="editor_object" />
+      <alias>earth button</alias>
+      <displayverbs type="stringlist">
+        <value>Push</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
     </object>
   </object>
   <object name="room5">
