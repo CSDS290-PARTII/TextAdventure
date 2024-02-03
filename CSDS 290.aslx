@@ -33,6 +33,13 @@
     <exit alias="inside" to="room1">
       <inherit name="eastdirection" />
     </exit>
+    <object name="Wreckage">
+      <inherit name="editor_object" />
+      <visible type="boolean">false</visible>
+      <displayverbs type="stringlist" />
+      <inventoryverbs type="stringlist" />
+      <drop type="boolean">false</drop>
+    </object>
   </object>
   <object name="room1">
     <inherit name="editor_room" />
@@ -101,6 +108,8 @@
               RemoveObject (Alien Alloy)
               RemoveObject (Energy Core)
               RemoveObject (Permafrost Jewel)
+              MakeObjectVisible (Repairing Agent)
+              MakeObjectVisible (Wreckage)
             }
           }
         }
@@ -114,6 +123,8 @@
         <value>Take</value>
       </displayverbs>
       <inventoryverbs type="stringlist" />
+      <visible type="boolean">false</visible>
+      <take />
     </object>
   </object>
   <object name="room3">
