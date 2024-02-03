@@ -44,6 +44,10 @@
   <object name="room1">
     <inherit name="editor_room" />
     <alias>first room</alias>
+<<<<<<< Updated upstream
+=======
+    <description type="string"></description>
+>>>>>>> Stashed changes
     <dropdestination type="object">room1</dropdestination>
     <exit alias="outside" to="Crushed Place">
       <inherit name="westdirection" />
@@ -84,6 +88,10 @@
   <object name="room2">
     <inherit name="editor_room" />
     <alias>second room</alias>
+<<<<<<< Updated upstream
+=======
+    <description type="string"></description>
+>>>>>>> Stashed changes
     <dropdestination type="object">room2</dropdestination>
     <exit alias="west" to="room1">
       <inherit name="westdirection" />
@@ -126,10 +134,29 @@
       <take />
       <selfuseon type="scriptdictionary" />
     </object>
+    <exit alias="east" to="room6">
+      <inherit name="eastdirection" />
+      <locked type="boolean">false</locked>
+      <runscript />
+      <script type="script">
+        if (Got(Gravity Boots)) {
+          MoveObject (player, room6)
+          msg ("You are in room 6 right now")
+        }
+        else {
+          msg ("There is something missing, you can' go to the other room")
+        }
+      </script>
+    </exit>
   </object>
   <object name="room3">
     <inherit name="editor_room" />
     <alias>third room</alias>
+<<<<<<< Updated upstream
+=======
+    <description type="string"></description>
+    <dropdestination type="object">room3</dropdestination>
+>>>>>>> Stashed changes
     <exit alias="south" to="room2">
       <inherit name="southdirection" />
     </exit>
@@ -145,6 +172,18 @@
       <autoopen type="boolean">false</autoopen>
       <keycount type="int">1</keycount>
       <take type="boolean">false</take>
+      <open />
+      <transparent type="boolean">false</transparent>
+      <visible />
+      <scenery type="boolean">false</scenery>
+      <attr name="feature_usegive" type="boolean">false</attr>
+      <canlockopen type="boolean">false</canlockopen>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+        <value>Take</value>
+        <value>Open</value>
+      </displayverbs>
+      <look><![CDATA[<i>It might contain something</i>]]></look>
       <addscript type="script">
       </addscript>
       <onopen type="script">
@@ -159,18 +198,6 @@
           msg ("There is nothing inside")
         }
       </onopen>
-      <open />
-      <transparent type="boolean">false</transparent>
-      <visible />
-      <scenery type="boolean">false</scenery>
-      <attr name="feature_usegive" type="boolean">false</attr>
-      <canlockopen type="boolean">false</canlockopen>
-      <displayverbs type="stringlist">
-        <value>Look at</value>
-        <value>Take</value>
-        <value>Open</value>
-      </displayverbs>
-      <look><![CDATA[<i>It might contain something</i>]]></look>
       <object name="Gravity Boots">
         <inherit name="editor_object" />
       </object>
@@ -200,6 +227,8 @@
     <inherit name="editor_room" />
     <alias>sixth room</alias>
     <dropdestination type="object">room6</dropdestination>
+    <onexit type="script">
+    </onexit>
     <object name="Alien Alloy">
       <inherit name="editor_object" />
     </object>
