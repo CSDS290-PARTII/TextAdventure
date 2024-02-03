@@ -104,10 +104,10 @@
       <addscript type="script">
         if (Contains (Fusion,Alien Alloy)) {
           if (Contains (Fusion,Energy Core)) {
-            if (Contains (Fusion,Permafrost Jewel)) {
+            if (Contains (Fusion,Movable Permafrost Jewel)) {
               RemoveObject (Alien Alloy)
               RemoveObject (Energy Core)
-              RemoveObject (Permafrost Jewel)
+              RemoveObject (Movable Permafrost Jewel)
               MakeObjectVisible (Repairing Agent)
               MakeObjectVisible (Wreckage)
             }
@@ -127,10 +127,17 @@
       <displayverbs type="stringlist">
         <value>Take</value>
       </displayverbs>
-      <inventoryverbs type="stringlist" />
+      <inventoryverbs type="stringlist">
+        <value>Use this on</value>
+      </inventoryverbs>
       <visible type="boolean">false</visible>
       <take />
-      <selfuseon type="scriptdictionary" />
+      <selfuseon type="scriptdictionary">
+        <item key="Wreckage">
+          msg ("Congratulations! You have successfully repaired your ship and escaped the planet.")
+          finish
+        </item>
+      </selfuseon>
     </object>
   </object>
   <object name="room3">
@@ -182,6 +189,13 @@
     <dropdestination type="object">room6</dropdestination>
     <object name="Alien Alloy">
       <inherit name="editor_object" />
+      <displayverbs type="stringlist">
+        <value>Take</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist">
+        <value>Drop</value>
+      </inventoryverbs>
+      <take />
     </object>
   </object>
   <object name="room7">
@@ -189,14 +203,50 @@
     <alias>seventh room</alias>
     <object name="Astrocite Pick">
       <inherit name="editor_object" />
+      <feature_usegive />
+      <selfuseon type="scriptdictionary">
+        <item key="Immovable Permafrost Jewel">
+          MakeObjectInvisible (Immovable Permafrost Jewel)
+          MakeObjectVisible (Movable Permafrost Jewel)
+        </item>
+      </selfuseon>
+      <gender>it</gender>
+      <alias>astrocite pick</alias>
+      <visible />
+      <displayverbs type="stringlist">
+        <value>Take</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist">
+        <value>Drop</value>
+      </inventoryverbs>
+      <take />
     </object>
   </object>
   <object name="room8">
     <inherit name="editor_room" />
     <alias>eighth room</alias>
     <dropdestination type="object">room8</dropdestination>
-    <object name="Permafrost Jewel">
+    <object name="Movable Permafrost Jewel">
       <inherit name="editor_object" />
+      <displayverbs type="stringlist">
+        <value>Take</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist">
+        <value>Drop</value>
+      </inventoryverbs>
+      <alias>permafrost jewel</alias>
+      <drop />
+      <visible type="boolean">false</visible>
+      <take />
+      <feature_usegive />
+      <givesingle type="boolean">false</givesingle>
+    </object>
+    <object name="Immovable Permafrost Jewel">
+      <inherit name="editor_object" />
+      <displayverbs type="stringlist" />
+      <inventoryverbs type="stringlist" />
+      <alias>permafrost jewel</alias>
+      <drop type="boolean">false</drop>
     </object>
   </object>
 </asl>
