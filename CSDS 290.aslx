@@ -44,6 +44,10 @@
   <object name="room1">
     <inherit name="editor_room" />
     <alias>first room</alias>
+<<<<<<< Updated upstream
+=======
+    <description type="string"></description>
+>>>>>>> Stashed changes
     <dropdestination type="object">room1</dropdestination>
     <exit alias="outside" to="Crushed Place">
       <inherit name="westdirection" />
@@ -84,6 +88,10 @@
   <object name="room2">
     <inherit name="editor_room" />
     <alias>second room</alias>
+<<<<<<< Updated upstream
+=======
+    <description type="string"></description>
+>>>>>>> Stashed changes
     <dropdestination type="object">room2</dropdestination>
     <exit alias="west" to="room1">
       <inherit name="westdirection" />
@@ -143,6 +151,11 @@
   <object name="room3">
     <inherit name="editor_room" />
     <alias>third room</alias>
+<<<<<<< Updated upstream
+=======
+    <description type="string"></description>
+    <dropdestination type="object">room3</dropdestination>
+>>>>>>> Stashed changes
     <exit alias="south" to="room2">
       <inherit name="southdirection" />
     </exit>
@@ -151,6 +164,42 @@
     </exit>
     <object name="Capsule">
       <inherit name="editor_object" />
+<<<<<<< Updated upstream
+=======
+      <inherit name="container_closed" />
+      <feature_container />
+      <close type="boolean">false</close>
+      <autounlock type="boolean">false</autounlock>
+      <autoopen type="boolean">false</autoopen>
+      <keycount type="int">1</keycount>
+      <take type="boolean">false</take>
+      <open />
+      <transparent type="boolean">false</transparent>
+      <visible />
+      <scenery type="boolean">false</scenery>
+      <attr name="feature_usegive" type="boolean">false</attr>
+      <canlockopen type="boolean">false</canlockopen>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+        <value>Take</value>
+        <value>Open</value>
+      </displayverbs>
+      <look><![CDATA[<i>It might contain something</i>]]></look>
+      <addscript type="script">
+      </addscript>
+      <onopen type="script">
+        if (Got(Translation Prism)) {
+          MakeObjectVisible (Gravity Boots)
+          AddToInventory (Gravity Boots)
+          msg ("You now can use Gravity Boots")
+        }
+        else {
+          MakeObjectInvisible (Gravity Boots)
+          HelperCloseObject (Capsule)
+          msg ("There is nothing inside")
+        }
+      </onopen>
+>>>>>>> Stashed changes
       <object name="Gravity Boots">
         <inherit name="editor_object" />
       </object>
@@ -162,11 +211,85 @@
     <exit alias="east" to="room3">
       <inherit name="eastdirection" />
     </exit>
-    <object name="Four Stone Columns">
+    <object name="Column 1">
       <inherit name="editor_object" />
-      <object name="Atomospheric Stabilizer">
-        <inherit name="editor_object" />
-      </object>
+      <visible />
+      <alias>first column</alias>
+      <drop type="boolean">false</drop>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <feature_usegive />
+      <useon type="scriptdictionary">
+        <item key="Translation Prism">
+          msg ("A symbol for \"Earth\" surfaces.")
+        </item>
+      </useon>
+      <look>The column shows a foreign symbol.</look>
+      <usedefaultprefix />
+    </object>
+    <object name="Column 2">
+      <inherit name="editor_object" />
+      <visible />
+      <alias>second column</alias>
+      <drop type="boolean">false</drop>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <feature_usegive />
+      <useon type="scriptdictionary">
+        <item key="Translation Prism">
+          msg ("The symbol disappears.")
+        </item>
+      </useon>
+      <look>The column shows a foreign symbol.</look>
+      <usedefaultprefix />
+    </object>
+    <object name="Column 3">
+      <inherit name="editor_object" />
+      <visible />
+      <alias>third column</alias>
+      <drop type="boolean">false</drop>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <feature_usegive />
+      <useon type="scriptdictionary">
+        <item key="Translation Prism">
+          msg ("A symbol for \"Fire\" surfaces.")
+        </item>
+      </useon>
+      <look>The column shows a foreign symbol.</look>
+      <usedefaultprefix />
+    </object>
+    <object name="Column 4">
+      <inherit name="editor_object" />
+      <visible />
+      <alias>fourth column</alias>
+      <drop type="boolean">false</drop>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <feature_usegive />
+      <useon type="scriptdictionary">
+        <item key="Translation Prism">
+          msg ("A symbol for \"Water\" surfaces.")
+        </item>
+      </useon>
+      <look>The column shows a foreign symbol.</look>
+      <usedefaultprefix />
+    </object>
+    <object name="Earth Button">
+      <inherit name="editor_object" />
+      <alias>earth button</alias>
+      <displayverbs type="stringlist">
+        <value>Push</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
     </object>
   </object>
   <object name="room5">
