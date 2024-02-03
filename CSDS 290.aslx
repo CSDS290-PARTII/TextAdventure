@@ -254,6 +254,19 @@
     <exit alias="west" to="room2">
       <inherit name="westdirection" />
     </exit>
+    <exit alias="southeast" to="room7">
+      <inherit name="southeastdirection" />
+      <runscript />
+      <script type="script">
+        if (Got(Gravity Boots)) {
+          MoveObject (player, room7)
+          msg ("You are now in room 7")
+        }
+        else {
+          msg ("You can't go to room 7")
+        }
+      </script>
+    </exit>
   </object>
   <object name="room7">
     <inherit name="editor_room" />
@@ -279,6 +292,9 @@
         </item>
       </selfuseon>
     </object>
+    <exit alias="northwest" to="room6">
+      <inherit name="northwestdirection" />
+    </exit>
   </object>
   <object name="room8">
     <inherit name="editor_room" />
