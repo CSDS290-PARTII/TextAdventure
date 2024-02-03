@@ -204,12 +204,6 @@
     <object name="Astrocite Pick">
       <inherit name="editor_object" />
       <feature_usegive />
-      <selfuseon type="scriptdictionary">
-        <item key="Immovable Permafrost Jewel">
-          MakeObjectInvisible (Immovable Permafrost Jewel)
-          MakeObjectVisible (Movable Permafrost Jewel)
-        </item>
-      </selfuseon>
       <gender>it</gender>
       <alias>astrocite pick</alias>
       <visible />
@@ -220,6 +214,12 @@
         <value>Drop</value>
       </inventoryverbs>
       <take />
+      <selfuseon type="scriptdictionary">
+        <item key="Immovable Permafrost Jewel">
+          MakeObjectInvisible (Immovable Permafrost Jewel)
+          MakeObjectVisible (Movable Permafrost Jewel)
+        </item>
+      </selfuseon>
     </object>
   </object>
   <object name="room8">
