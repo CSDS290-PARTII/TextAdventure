@@ -155,6 +155,39 @@
     </exit>
     <object name="Capsule">
       <inherit name="editor_object" />
+      <inherit name="container_closed" />
+      <feature_container />
+      <close type="boolean">false</close>
+      <autounlock type="boolean">false</autounlock>
+      <autoopen type="boolean">false</autoopen>
+      <keycount type="int">1</keycount>
+      <take type="boolean">false</take>
+      <addscript type="script">
+      </addscript>
+      <onopen type="script">
+        if (Got(Translation Prism)) {
+          MakeObjectVisible (Gravity Boots)
+          AddToInventory (Gravity Boots)
+          msg ("You now can use Gravity Boots")
+        }
+        else {
+          MakeObjectInvisible (Gravity Boots)
+          HelperCloseObject (Capsule)
+          msg ("There is nothing inside")
+        }
+      </onopen>
+      <open />
+      <transparent type="boolean">false</transparent>
+      <visible />
+      <scenery type="boolean">false</scenery>
+      <attr name="feature_usegive" type="boolean">false</attr>
+      <canlockopen type="boolean">false</canlockopen>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+        <value>Take</value>
+        <value>Open</value>
+      </displayverbs>
+      <look><![CDATA[<i>It might contain something</i>]]></look>
       <object name="Gravity Boots">
         <inherit name="editor_object" />
       </object>
