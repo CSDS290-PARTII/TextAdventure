@@ -141,6 +141,20 @@
         </item>
       </selfuseon>
     </object>
+    <exit alias="east" to="room6">
+      <inherit name="eastdirection" />
+      <locked type="boolean">false</locked>
+      <runscript />
+      <script type="script">
+        if (Got(Gravity Boots)) {
+          MoveObject (player, room6)
+          msg ("You are in room 6 now")
+        }
+        else {
+          msg ("You are missing something, you can't go to room 6")
+        }
+      </script>
+    </exit>
   </object>
   <object name="room3">
     <inherit name="editor_room" />
@@ -311,6 +325,9 @@
       </inventoryverbs>
       <take />
     </object>
+    <exit alias="west" to="room2">
+      <inherit name="westdirection" />
+    </exit>
   </object>
   <object name="room7">
     <inherit name="editor_room" />
