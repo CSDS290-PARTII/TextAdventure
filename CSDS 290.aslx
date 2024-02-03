@@ -226,12 +226,8 @@
     <exit alias="east" to="room3">
       <inherit name="eastdirection" />
     </exit>
-    <object name="Four Stone Columns">
     <object name="Column 1">
       <inherit name="editor_object" />
-      <object name="Atomospheric Stabilizer">
-        <inherit name="editor_object" />
-      </object>
       <visible />
       <alias>first column</alias>
       <drop type="boolean">false</drop>
