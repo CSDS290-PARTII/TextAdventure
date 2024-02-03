@@ -30,7 +30,7 @@
       <inherit name="editor_player" />
       <inherit name="male" />
     </object>
-    <exit alias="east" to="room1">
+    <exit alias="inside" to="room1">
       <inherit name="eastdirection" />
     </exit>
   </object>
@@ -66,8 +66,8 @@
       <object name="Translation Prism">
         <inherit name="editor_object" />
         <feature_usegive />
-        <selfuseon type="scriptdictionary" />
         <take />
+        <selfuseon type="scriptdictionary" />
       </object>
     </object>
   </object>
