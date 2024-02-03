@@ -84,6 +84,37 @@
     <exit alias="north" to="room3">
       <inherit name="northdirection" />
     </exit>
+    <object name="Fusion">
+      <inherit name="editor_object" />
+      <inherit name="container_open" />
+      <alias>fusion</alias>
+      <displayverbs type="stringlist" />
+      <inventoryverbs type="stringlist" />
+      <drop type="boolean">false</drop>
+      <feature_container />
+      <open type="boolean">false</open>
+      <close type="boolean">false</close>
+      <addscript type="script">
+        if (Contains (Fusion,Alien Alloy)) {
+          if (Contains (Fusion,Energy Core)) {
+            if (Contains (Fusion,Permafrost Jewel)) {
+              RemoveObject (Alien Alloy)
+              RemoveObject (Energy Core)
+              RemoveObject (Permafrost Jewel)
+            }
+          }
+        }
+      </addscript>
+    </object>
+    <object name="Repairing Agent">
+      <inherit name="editor_object" />
+      <feature_usegive />
+      <selfuseon type="scriptdictionary" />
+      <displayverbs type="stringlist">
+        <value>Take</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+    </object>
   </object>
   <object name="room3">
     <inherit name="editor_room" />
@@ -105,11 +136,17 @@
   <object name="room5">
     <inherit name="editor_room" />
     <alias>fifth room</alias>
+    <object name="Energy Core">
+      <inherit name="editor_object" />
+    </object>
   </object>
   <object name="room6">
     <inherit name="editor_room" />
     <alias>sixth room</alias>
     <dropdestination type="object">room6</dropdestination>
+    <object name="Alien Alloy">
+      <inherit name="editor_object" />
+    </object>
   </object>
   <object name="room7">
     <inherit name="editor_room" />
@@ -119,5 +156,8 @@
     <inherit name="editor_room" />
     <alias>eighth room</alias>
     <dropdestination type="object">room8</dropdestination>
+    <object name="Permafrost Jewel">
+      <inherit name="editor_object" />
+    </object>
   </object>
 </asl>
