@@ -22,7 +22,7 @@
     <alias>a crushed place</alias>
     <descprefix>You find yourself in</descprefix>
     <objectslistprefix>Around you, there are</objectslistprefix>
-    <description>The air smells of scorched metal. Your first look around reveals the remnants of your spacecraft and alien technology, unfamiliar yet intriguing. The sight strengthens your resolve to survive. Ahead, ruins whisper promises of secrets and perhaps a way forward on this unknown planet.</description>
+    <description type="string"></description>
     <usedefaultprefix type="boolean">false</usedefaultprefix>
     <dropdestination type="object">Crushed Place</dropdestination>
     <object name="player">
@@ -45,6 +45,7 @@
     <inherit name="editor_room" />
     <alias>first room</alias>
     <dropdestination type="object">room1</dropdestination>
+    <description type="string"></description>
     <exit alias="outside" to="Crushed Place">
       <inherit name="westdirection" />
     </exit>
@@ -85,6 +86,7 @@
     <inherit name="editor_room" />
     <alias>second room</alias>
     <dropdestination type="object">room2</dropdestination>
+    <description type="string"></description>
     <exit alias="west" to="room1">
       <inherit name="westdirection" />
     </exit>
@@ -143,6 +145,8 @@
   <object name="room3">
     <inherit name="editor_room" />
     <alias>third room</alias>
+    <dropdestination type="object">room3</dropdestination>
+    <description type="string"></description>
     <exit alias="south" to="room2">
       <inherit name="southdirection" />
     </exit>
@@ -159,6 +163,8 @@
   <object name="room4">
     <inherit name="editor_room" />
     <alias>fourth room</alias>
+    <description type="string"></description>
+    <dropdestination type="object">room4</dropdestination>
     <exit alias="east" to="room3">
       <inherit name="eastdirection" />
     </exit>
@@ -172,6 +178,7 @@
   <object name="room5">
     <inherit name="editor_room" />
     <alias>fifth room</alias>
+    <dropdestination type="object">room5</dropdestination>
     <object name="Energy Core">
       <inherit name="editor_object" />
       <displayverbs type="stringlist">
@@ -201,6 +208,7 @@
   <object name="room7">
     <inherit name="editor_room" />
     <alias>seventh room</alias>
+    <dropdestination type="object">room7</dropdestination>
     <object name="Astrocite Pick">
       <inherit name="editor_object" />
       <feature_usegive />
