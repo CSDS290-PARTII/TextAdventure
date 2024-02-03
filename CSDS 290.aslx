@@ -41,7 +41,7 @@
     <exit alias="outside" to="Crushed Place">
       <inherit name="westdirection" />
     </exit>
-    <exit alias="further in" to="room2">
+    <exit alias="east" to="room2">
       <inherit name="eastdirection" />
     </exit>
     <object name="Box">
@@ -49,20 +49,23 @@
       <inherit name="openable" />
       <listalias type="string"></listalias>
       <displayverbs type="stringlist">
-        <value>Open</value>
-        <value>Close</value>
+        <value>open</value>
       </displayverbs>
       <inventoryverbs type="stringlist" />
-      <usestandardverblist />
+      <usestandardverblist type="boolean">false</usestandardverblist>
       <useindividualverblist type="boolean">false</useindividualverblist>
       <feature_container />
-      <close />
+      <close type="boolean">false</close>
       <alias>box</alias>
       <take type="boolean">false</take>
       <openscript type="script">
-        AddToInventory (Translation Prism)
-        msg ("You find a Translation Prism and take it.")
+        if (Contains (Box,Translation Prism)) {
+          AddToInventory (Translation Prism)
+          msg ("You find a Translation Prism and take it.")
+          RemoveObject (Box)
+        }
       </openscript>
+      <isopen type="boolean">false</isopen>
       <object name="Translation Prism">
         <inherit name="editor_object" />
         <feature_usegive />
@@ -88,10 +91,16 @@
     <exit alias="south" to="room2">
       <inherit name="southdirection" />
     </exit>
+    <exit alias="west" to="room4">
+      <inherit name="westdirection" />
+    </exit>
   </object>
   <object name="room4">
     <inherit name="editor_room" />
     <alias>fourth room</alias>
+    <exit alias="east" to="room3">
+      <inherit name="eastdirection" />
+    </exit>
   </object>
   <object name="room5">
     <inherit name="editor_room" />
