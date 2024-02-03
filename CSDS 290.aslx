@@ -44,10 +44,7 @@
   <object name="room1">
     <inherit name="editor_room" />
     <alias>first room</alias>
-<<<<<<< Updated upstream
-=======
     <description type="string"></description>
->>>>>>> Stashed changes
     <dropdestination type="object">room1</dropdestination>
     <exit alias="outside" to="Crushed Place">
       <inherit name="westdirection" />
@@ -88,10 +85,7 @@
   <object name="room2">
     <inherit name="editor_room" />
     <alias>second room</alias>
-<<<<<<< Updated upstream
-=======
     <description type="string"></description>
->>>>>>> Stashed changes
     <dropdestination type="object">room2</dropdestination>
     <exit alias="west" to="room1">
       <inherit name="westdirection" />
@@ -151,11 +145,8 @@
   <object name="room3">
     <inherit name="editor_room" />
     <alias>third room</alias>
-<<<<<<< Updated upstream
-=======
     <description type="string"></description>
     <dropdestination type="object">room3</dropdestination>
->>>>>>> Stashed changes
     <exit alias="south" to="room2">
       <inherit name="southdirection" />
     </exit>
@@ -164,8 +155,6 @@
     </exit>
     <object name="Capsule">
       <inherit name="editor_object" />
-<<<<<<< Updated upstream
-=======
       <inherit name="container_closed" />
       <feature_container />
       <close type="boolean">false</close>
@@ -199,7 +188,6 @@
           msg ("There is nothing inside")
         }
       </onopen>
->>>>>>> Stashed changes
       <object name="Gravity Boots">
         <inherit name="editor_object" />
       </object>
@@ -221,13 +209,13 @@
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <feature_usegive />
+      <look>The column shows a foreign symbol.</look>
+      <usedefaultprefix />
       <useon type="scriptdictionary">
         <item key="Translation Prism">
           msg ("A symbol for \"Earth\" surfaces.")
         </item>
       </useon>
-      <look>The column shows a foreign symbol.</look>
-      <usedefaultprefix />
     </object>
     <object name="Column 2">
       <inherit name="editor_object" />
@@ -239,13 +227,13 @@
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <feature_usegive />
+      <look>The column shows a foreign symbol.</look>
+      <usedefaultprefix />
       <useon type="scriptdictionary">
         <item key="Translation Prism">
           msg ("The symbol disappears.")
         </item>
       </useon>
-      <look>The column shows a foreign symbol.</look>
-      <usedefaultprefix />
     </object>
     <object name="Column 3">
       <inherit name="editor_object" />
@@ -257,13 +245,13 @@
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <feature_usegive />
+      <look>The column shows a foreign symbol.</look>
+      <usedefaultprefix />
       <useon type="scriptdictionary">
         <item key="Translation Prism">
           msg ("A symbol for \"Fire\" surfaces.")
         </item>
       </useon>
-      <look>The column shows a foreign symbol.</look>
-      <usedefaultprefix />
     </object>
     <object name="Column 4">
       <inherit name="editor_object" />
@@ -275,13 +263,13 @@
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <feature_usegive />
+      <look>The column shows a foreign symbol.</look>
+      <usedefaultprefix />
       <useon type="scriptdictionary">
         <item key="Translation Prism">
           msg ("A symbol for \"Water\" surfaces.")
         </item>
       </useon>
-      <look>The column shows a foreign symbol.</look>
-      <usedefaultprefix />
     </object>
     <object name="Earth Button">
       <inherit name="editor_object" />
@@ -327,12 +315,6 @@
     <object name="Astrocite Pick">
       <inherit name="editor_object" />
       <feature_usegive />
-      <selfuseon type="scriptdictionary">
-        <item key="Immovable Permafrost Jewel">
-          MakeObjectInvisible (Immovable Permafrost Jewel)
-          MakeObjectVisible (Movable Permafrost Jewel)
-        </item>
-      </selfuseon>
       <gender>it</gender>
       <alias>astrocite pick</alias>
       <visible />
@@ -343,6 +325,12 @@
         <value>Drop</value>
       </inventoryverbs>
       <take />
+      <selfuseon type="scriptdictionary">
+        <item key="Immovable Permafrost Jewel">
+          MakeObjectInvisible (Immovable Permafrost Jewel)
+          MakeObjectVisible (Movable Permafrost Jewel)
+        </item>
+      </selfuseon>
     </object>
   </object>
   <object name="room8">
