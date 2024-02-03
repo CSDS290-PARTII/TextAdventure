@@ -113,6 +113,12 @@
             }
           }
         }
+        if (game.pov = Repairing Agent) {
+          AddToInventory (Repairing Agent)
+        }
+        else if (game.pov = Translation Prism) {
+          AddToInventory (Translation Prism)
+        }
       </addscript>
     </object>
     <object name="Repairing Agent">
