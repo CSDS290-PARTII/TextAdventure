@@ -59,6 +59,9 @@
     <alias>first room</alias>
     <description type="string"></description>
     <dropdestination type="object">room1</dropdestination>
+    <beforeenter type="script">
+      msg ("I look around, I know this is not earth's environment. I need to fix my spaceship to return to Earth. Due to the crash, there are three critical components of my spaceship are missing. I need to find them and fixed my spaceship.")
+    </beforeenter>
     <exit alias="outside" to="Crushed Place">
       <inherit name="westdirection" />
     </exit>
@@ -71,6 +74,7 @@
       <listalias type="string"></listalias>
       <displayverbs type="stringlist">
         <value>open</value>
+        <value>look at</value>
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <usestandardverblist type="boolean">false</usestandardverblist>
@@ -83,10 +87,11 @@
       <openscript type="script">
         if (Contains (Box,Translation Prism)) {
           AddToInventory (Translation Prism)
-          msg ("You find a Translation Prism and take it.")
+          msg ("You find a Translation Prism and take it. You can use the Translation Prism on some objective")
           RemoveObject (Box)
         }
       </openscript>
+      <look>It might contain something</look>
       <object name="Translation Prism">
         <inherit name="editor_object" />
         <feature_usegive />
@@ -205,8 +210,10 @@
     </object>
     <object name="East Locked Door">
       <inherit name="editor_object" />
-      <alias>locked door (east)</alias>
-      <displayverbs type="stringlist" />
+      <alias>door (east)</alias>
+      <displayverbs type="stringlist">
+        <value>look at</value>
+      </displayverbs>
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
       <feature_usegive />
@@ -218,6 +225,8 @@
           MoveObject (player, room6)
         </item>
       </useon>
+      <look>There is a great gap between this room and the room on the otherside</look>
+      <usedefaultprefix type="boolean">false</usedefaultprefix>
     </object>
     <object name="South Locked Door">
       <inherit name="editor_object" />
@@ -265,7 +274,7 @@
       <openscript type="script">
         if (Contains (Capsule,Gravity Boots)) {
           AddToInventory (Gravity Boots)
-          msg ("You find Gravity Boots and take them.")
+          msg ("You find Gravity Boots and take them. You can use Gravity Boots on some objective")
           RemoveObject (Capsule)
         }
       </openscript>
@@ -434,8 +443,10 @@
     </exit>
     <object name="Southeast Locked Door">
       <inherit name="editor_object" />
-      <alias>locked door (southeast)</alias>
-      <displayverbs type="stringlist" />
+      <alias>door (southeast)</alias>
+      <displayverbs type="stringlist">
+        <value>look at</value>
+      </displayverbs>
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
       <feature_usegive />
@@ -448,6 +459,8 @@
           MoveObject (player, room7)
         </item>
       </useon>
+      <look>There is a great gap between this room and the room on the otherside</look>
+      <scenery />
     </object>
   </object>
   <object name="room7">
