@@ -40,13 +40,13 @@
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
       <feature_usegive />
+      <alias>wreckage</alias>
       <useon type="scriptdictionary">
         <item key="Repairing Agent">
           msg ("Congratulations, you've successfully repaired the ship and survived!")
           finish
         </item>
       </useon>
-      <alias>wreckage</alias>
     </object>
   </object>
   <object name="room1">
@@ -117,6 +117,7 @@
       <attr name="feature_container" type="boolean">false</attr>
       <open type="boolean">false</open>
       <close type="boolean">false</close>
+      <feature_usegive />
       <addscript type="script">
         if (Contains (Fusion,Alien Alloy)) {
           if (Contains (Fusion,Energy Core)) {
@@ -136,7 +137,6 @@
           AddToInventory (Translation Prism)
         }
       </addscript>
-      <feature_usegive />
       <useon type="scriptdictionary">
         <item key="Alien Alloy">
           SetObjectFlagOn (Fusion, "Alien Alloy")
@@ -190,13 +190,13 @@
       </inventoryverbs>
       <visible type="boolean">false</visible>
       <take />
+      <alias>repairing agent</alias>
       <selfuseon type="scriptdictionary">
         <item key="Wreckage">
           msg ("Congratulations! You have successfully repaired your ship and escaped the planet.")
           finish
         </item>
       </selfuseon>
-      <alias>repairing agent</alias>
     </object>
     <object name="East Locked Door">
       <inherit name="editor_object" />
@@ -434,6 +434,7 @@
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
       <feature_usegive />
+      <visible />
       <useon type="scriptdictionary">
         <item key="Gravity Boots">
           MakeObjectInvisible (Southeast Locked Door)
@@ -442,36 +443,73 @@
           MoveObject (player, room7)
         </item>
       </useon>
-      <visible />
     </object>
   </object>
   <object name="room7">
     <inherit name="editor_room" />
     <alias>seventh room</alias>
     <dropdestination type="object">room7</dropdestination>
-    <object name="Astrocite Pick">
-      <inherit name="editor_object" />
-      <feature_usegive />
-      <gender>it</gender>
-      <alias>astrocite pick</alias>
-      <visible />
-      <displayverbs type="stringlist">
-        <value>Take</value>
-      </displayverbs>
-      <inventoryverbs type="stringlist">
-        <value>Drop</value>
-      </inventoryverbs>
-      <take />
-      <selfuseon type="scriptdictionary">
-        <item key="Immovable Permafrost Jewel">
-          MakeObjectInvisible (Immovable Permafrost Jewel)
-          MakeObjectVisible (Movable Permafrost Jewel)
-        </item>
-      </selfuseon>
-    </object>
     <exit alias="northwest" to="room6">
       <inherit name="northwestdirection" />
     </exit>
+    <object name="LockedBox">
+      <inherit name="editor_object" />
+      <inherit name="container_closed" />
+      <feature_usegive />
+      <feature_container />
+      <open />
+      <close type="boolean">false</close>
+      <onopen type="script">
+        AddToInventory (Astrocite Pick)
+      </onopen>
+      <useon type="scriptdictionary">
+        <item key="LockedBoxKey">
+          msg ("To open this box you need to answer me questions!!")
+          msg ("The first question is : What is the end of everything?")
+          get input {
+            if (result = "g") {
+              msg ("You are correct! Let's move on to the next question!")
+              msg ("What kind of room has no doors or windows?")
+              get input {
+                if (result = "A mushroom") {
+                  HelperOpenObject (LockedBox)
+                  msg ("You have the pick now")
+                }
+                else {
+                  msg ("That is incorrect, you have to try it again!")
+                }
+              }
+            }
+            else {
+              msg ("The answer is incorrect!")
+            }
+          }
+        </item>
+      </useon>
+      <object name="Astrocite Pick">
+        <inherit name="editor_object" />
+        <feature_usegive />
+        <gender>it</gender>
+        <alias>astrocite pick</alias>
+        <visible />
+        <displayverbs type="stringlist">
+          <value>Take</value>
+        </displayverbs>
+        <inventoryverbs type="stringlist">
+          <value>Drop</value>
+        </inventoryverbs>
+        <take />
+        <selfuseon type="scriptdictionary">
+          <item key="Immovable Permafrost Jewel">
+            MakeObjectInvisible (Immovable Permafrost Jewel)
+            MakeObjectVisible (Movable Permafrost Jewel)
+          </item>
+        </selfuseon>
+      </object>
+    </object>
+    <object name="LockedBoxKey">
+      <inherit name="editor_object" />
+    </object>
   </object>
   <object name="room8">
     <inherit name="editor_room" />
@@ -515,8 +553,8 @@
   <object name="Panel">
     <inherit name="editor_room" />
     <alias>panel</alias>
-    <dropdestination type="object">room4</dropdestination>
     <descprefix>You are viewing the panel</descprefix>
+    <dropdestination type="object">room4</dropdestination>
     <exit alias="exit panel" to="room4">
       <inherit name="outdirection" />
     </exit>
