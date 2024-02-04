@@ -325,7 +325,7 @@
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <feature_usegive />
-      <look>The column shows a foreign symbol.</look>
+      <look>The column shows a foreign symbol. Try to use something on it</look>
       <usedefaultprefix />
       <useon type="scriptdictionary">
         <item key="Translation Prism">
@@ -343,7 +343,7 @@
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <feature_usegive />
-      <look>The column shows a foreign symbol.</look>
+      <look>The column shows a foreign symbol. Try to use something on it</look>
       <usedefaultprefix />
       <useon type="scriptdictionary">
         <item key="Translation Prism">
@@ -361,7 +361,7 @@
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <feature_usegive />
-      <look>The column shows a foreign symbol.</look>
+      <look>The column shows a foreign symbol. Try to use something on it</look>
       <usedefaultprefix />
       <useon type="scriptdictionary">
         <item key="Translation Prism">
@@ -379,7 +379,7 @@
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <feature_usegive />
-      <look>The column shows a foreign symbol.</look>
+      <look>The column shows a foreign symbol. Try to use something on it</look>
       <usedefaultprefix />
       <useon type="scriptdictionary">
         <item key="Translation Prism">
@@ -412,12 +412,15 @@
       <inherit name="editor_object" />
       <displayverbs type="stringlist">
         <value>Take</value>
+        <value>look at</value>
       </displayverbs>
       <inventoryverbs type="stringlist">
         <value>Drop</value>
+        <value>look at</value>
       </inventoryverbs>
       <take />
       <alias>energy core</alias>
+      <look>This is one of three important components to fix your spaceship.</look>
     </object>
     <exit alias="south" to="room3">
       <inherit name="southdirection" />
@@ -431,12 +434,15 @@
       <inherit name="editor_object" />
       <displayverbs type="stringlist">
         <value>Take</value>
+        <value>look at</value>
       </displayverbs>
       <inventoryverbs type="stringlist">
         <value>Drop</value>
+        <value>look at</value>
       </inventoryverbs>
       <take />
       <alias>alien alloy</alias>
+      <look>This is one of three important components to fix your spaceship.</look>
     </object>
     <exit alias="west" to="room2">
       <inherit name="westdirection" />
@@ -537,9 +543,11 @@
       <inherit name="editor_object" />
       <displayverbs type="stringlist">
         <value>Take</value>
+        <value>look at</value>
       </displayverbs>
       <inventoryverbs type="stringlist">
         <value>Drop</value>
+        <value>look at</value>
       </inventoryverbs>
       <alias>permafrost jewel</alias>
       <drop />
@@ -547,6 +555,7 @@
       <take />
       <feature_usegive />
       <givesingle type="boolean">false</givesingle>
+      <look>This is one of the important components to fix your spaceship.</look>
     </object>
     <object name="Immovable Permafrost Jewel">
       <inherit name="editor_object" />
@@ -596,7 +605,7 @@
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <push type="script">
-        msg ("An atmospheric stabilizer appears. You take it.")
+        msg ("An atmospheric stabilizer appears. You take it. You can use it on some objective")
         MakeObjectVisible (Atmospheric Stabilizer)
         MoveObject (Atmospheric Stabilizer, player)
       </push>
