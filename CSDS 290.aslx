@@ -16,6 +16,7 @@
     </povstatusattributes>
     <showtitle />
     <pov type="object">player</pov>
+    <description>In this game you play as Cooper, a skilled space pilot, crash-landing on an uncharted planet because of an asteroid explosion. When Cooper woke up, he finds his aerocraft was landing in front of a giant remnants of a once-prosperous alien civilization. As a space pilot, he is fascinated with the alien relic. And he also finds that exploring the relic might be the only possible way to fix his aerocraft and get himself back to Earth. In this journey, Cooper will explore ancient ruins, harness alien technologies, and gather resources to repair his spacecraft and escape the planet.</description>
   </game>
   <object name="Crushed Place">
     <inherit name="editor_room" />
@@ -25,6 +26,10 @@
     <description type="string"></description>
     <usedefaultprefix type="boolean">false</usedefaultprefix>
     <dropdestination type="object">Crushed Place</dropdestination>
+    <beforeenter type="script"><![CDATA[
+      msg ("When I was on my way to Earth, my spaceship spirals uncontrollably, its hull marred by the relentless assault of cosmic debris. I'm at the helm, fighting a losing battle with the controls, every flick of the switch, every twist of the knob, a desperate attempt to avert the inevitable. I know I could not save this spaceship anymore. The only thing that I'm begging God now is to keep me alive. ")
+      msg ("The impact is a symphony of destruction, metal tearing, and the world outside morphing into a blur of chaos. Luckily, I survived from this tremendous accident. Regardless of my injury, I only cares about one thing: <i>Where am I!!<i>")
+    ]]></beforeenter>
     <object name="player">
       <inherit name="editor_object" />
       <inherit name="editor_player" />
