@@ -21,7 +21,7 @@
     <inherit name="editor_room" />
     <alias>a crushed place</alias>
     <descprefix>You find yourself in</descprefix>
-    <objectslistprefix>Around you, there are</objectslistprefix>
+    <objectslistprefix>Around you, there is</objectslistprefix>
     <description type="string"></description>
     <usedefaultprefix type="boolean">false</usedefaultprefix>
     <dropdestination type="object">Crushed Place</dropdestination>
@@ -35,10 +35,18 @@
     </exit>
     <object name="Wreckage">
       <inherit name="editor_object" />
-      <visible type="boolean">false</visible>
+      <visible />
       <displayverbs type="stringlist" />
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
+      <feature_usegive />
+      <useon type="scriptdictionary">
+        <item key="Repairing Agent">
+          msg ("Congratulations, you've successfully repaired the ship and survived!")
+          finish
+        </item>
+      </useon>
+      <alias>wreckage</alias>
     </object>
   </object>
   <object name="room1">
@@ -78,7 +86,13 @@
         <inherit name="editor_object" />
         <feature_usegive />
         <take />
-        <selfuseon type="scriptdictionary" />
+        <alias>translation prism</alias>
+        <displayverbs type="stringlist">
+          <value>Take</value>
+        </displayverbs>
+        <inventoryverbs type="stringlist">
+          <value>Drop</value>
+        </inventoryverbs>
       </object>
     </object>
   </object>
@@ -100,7 +114,7 @@
       <displayverbs type="stringlist" />
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
-      <feature_container />
+      <attr name="feature_container" type="boolean">false</attr>
       <open type="boolean">false</open>
       <close type="boolean">false</close>
       <addscript type="script">
@@ -122,15 +136,57 @@
           AddToInventory (Translation Prism)
         }
       </addscript>
+      <feature_usegive />
+      <useon type="scriptdictionary">
+        <item key="Alien Alloy">
+          SetObjectFlagOn (Fusion, "Alien Alloy")
+          RemoveObject (Alien Alloy)
+          if (GetBoolean(Fusion, "Alien Alloy")) {
+            if (GetBoolean(Fusion, "Energy Core")) {
+              if (GetBoolean(Fusion, "Permafrost Jewel")) {
+                MakeObjectVisible (Repairing Agent)
+                msg ("Repairing agent is created by the fusion. You take it.")
+                AddToInventory (Repairing Agent)
+              }
+            }
+          }
+        </item>
+        <item key="Energy Core">
+          SetObjectFlagOn (Fusion, "Energy Core")
+          RemoveObject (Energy Core)
+          if (GetBoolean(Fusion, "Alien Alloy")) {
+            if (GetBoolean(Fusion, "Energy Core")) {
+              if (GetBoolean(Fusion, "Permafrost Jewel")) {
+                MakeObjectVisible (Repairing Agent)
+                msg ("Repairing agent is created by the fusion. You take it.")
+                AddToInventory (Repairing Agent)
+              }
+            }
+          }
+        </item>
+        <item key="Movable Permafrost Jewel">
+          SetObjectFlagOn (Fusion, "Permafrost Jewel")
+          RemoveObject (Movable Permafrost Jewel)
+          if (GetBoolean(Fusion, "Alien Alloy")) {
+            if (GetBoolean(Fusion, "Energy Core")) {
+              if (GetBoolean(Fusion, "Permafrost Jewel")) {
+                MakeObjectVisible (Repairing Agent)
+                msg ("Repairing agent is created by the fusion. You take it.")
+                AddToInventory (Repairing Agent)
+              }
+            }
+          }
+        </item>
+      </useon>
     </object>
     <object name="Repairing Agent">
       <inherit name="editor_object" />
-      <feature_usegive />
+      <attr name="feature_usegive" type="boolean">false</attr>
       <displayverbs type="stringlist">
         <value>Take</value>
       </displayverbs>
       <inventoryverbs type="stringlist">
-        <value>Use this on</value>
+        <value>Drop</value>
       </inventoryverbs>
       <visible type="boolean">false</visible>
       <take />
@@ -140,21 +196,40 @@
           finish
         </item>
       </selfuseon>
+      <alias>repairing agent</alias>
     </object>
-    <exit alias="east" to="room6">
-      <inherit name="eastdirection" />
-      <locked type="boolean">false</locked>
-      <runscript />
-      <script type="script">
-        if (Got(Gravity Boots)) {
+    <object name="East Locked Door">
+      <inherit name="editor_object" />
+      <alias>locked door (east)</alias>
+      <displayverbs type="stringlist" />
+      <inventoryverbs type="stringlist" />
+      <drop type="boolean">false</drop>
+      <feature_usegive />
+      <useon type="scriptdictionary">
+        <item key="Gravity Boots">
+          MakeObjectInvisible (East Locked Door)
+          create exit ("east", room2, room6)
+          msg ("A tunnel going east opens. You explore it.")
           MoveObject (player, room6)
-          msg ("You are in room 6 now")
-        }
-        else {
-          msg ("You are missing something, you can't go to room 6")
-        }
-      </script>
-    </exit>
+        </item>
+      </useon>
+    </object>
+    <object name="South Locked Door">
+      <inherit name="editor_object" />
+      <alias>locked door (south)</alias>
+      <displayverbs type="stringlist" />
+      <inventoryverbs type="stringlist" />
+      <drop type="boolean">false</drop>
+      <feature_usegive />
+      <useon type="scriptdictionary">
+        <item key="Atmospheric Stabilizer">
+          MakeObjectInvisible (South Locked Door)
+          create exit ("south", room2, room8)
+          msg ("A tunnel going south opens. You explore it.")
+          MoveObject (player, room8)
+        </item>
+      </useon>
+    </object>
   </object>
   <object name="room3">
     <inherit name="editor_room" />
@@ -169,42 +244,53 @@
     </exit>
     <object name="Capsule">
       <inherit name="editor_object" />
-      <inherit name="container_closed" />
+      <inherit name="openable" />
+      <listalias type="string"></listalias>
+      <displayverbs type="stringlist">
+        <value>open</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <usestandardverblist type="boolean">false</usestandardverblist>
+      <useindividualverblist type="boolean">false</useindividualverblist>
       <feature_container />
       <close type="boolean">false</close>
-      <autounlock type="boolean">false</autounlock>
-      <autoopen type="boolean">false</autoopen>
-      <keycount type="int">1</keycount>
+      <alias>capsule</alias>
       <take type="boolean">false</take>
-      <open />
-      <transparent type="boolean">false</transparent>
-      <visible />
-      <scenery type="boolean">false</scenery>
-      <attr name="feature_usegive" type="boolean">false</attr>
-      <canlockopen type="boolean">false</canlockopen>
-      <displayverbs type="stringlist">
-        <value>Look at</value>
-        <value>Take</value>
-        <value>Open</value>
-      </displayverbs>
-      <look><![CDATA[<i>It might contain something</i>]]></look>
-      <addscript type="script">
-      </addscript>
-      <onopen type="script">
-        if (Got(Translation Prism)) {
-          MakeObjectVisible (Gravity Boots)
+      <isopen type="boolean">false</isopen>
+      <openscript type="script">
+        if (Contains (Capsule,Gravity Boots)) {
           AddToInventory (Gravity Boots)
-          msg ("You now can use Gravity Boots")
+          msg ("You find Gravity Boots and take them.")
+          RemoveObject (Capsule)
         }
-        else {
-          MakeObjectInvisible (Gravity Boots)
-          HelperCloseObject (Capsule)
-          msg ("There is nothing inside")
-        }
-      </onopen>
+      </openscript>
       <object name="Gravity Boots">
         <inherit name="editor_object" />
+        <displayverbs type="stringlist">
+          <value>Take</value>
+        </displayverbs>
+        <inventoryverbs type="stringlist">
+          <value>Drop</value>
+        </inventoryverbs>
+        <take />
+        <alias>gravity boots</alias>
       </object>
+    </object>
+    <object name="North Locked Door">
+      <inherit name="editor_object" />
+      <alias>locked door (north)</alias>
+      <displayverbs type="stringlist" />
+      <inventoryverbs type="stringlist" />
+      <drop type="boolean">false</drop>
+      <feature_usegive />
+      <useon type="scriptdictionary">
+        <item key="Atmospheric Stabilizer">
+          MakeObjectInvisible (North Locked Door)
+          create exit ("north", room3, room5)
+          msg ("A tunnel going north opens. You explore it.")
+          MoveObject (player, room5)
+        </item>
+      </useon>
     </object>
   </object>
   <object name="room4">
@@ -287,53 +373,6 @@
         </item>
       </useon>
     </object>
-    <object name="Earth Button">
-      <inherit name="editor_object" />
-      <alias>earth button</alias>
-      <displayverbs type="stringlist">
-        <value>Push</value>
-      </displayverbs>
-      <inventoryverbs type="stringlist" />
-      <push type="script">
-        msg ("You died!")
-        finish
-      </push>
-    </object>
-    <object name="Air Button">
-      <inherit name="editor_object" />
-      <alias>air button</alias>
-      <displayverbs type="stringlist">
-        <value>Push</value>
-      </displayverbs>
-      <inventoryverbs type="stringlist" />
-      <push type="script">
-        MakeObjectVisible (Atmospheric Stabilizer)
-      </push>
-    </object>
-    <object name="Fire Button">
-      <inherit name="editor_object" />
-      <alias>fire button</alias>
-      <displayverbs type="stringlist">
-        <value>Push</value>
-      </displayverbs>
-      <inventoryverbs type="stringlist" />
-      <push type="script">
-        msg ("You died!")
-        finish
-      </push>
-    </object>
-    <object name="Water Button">
-      <inherit name="editor_object" />
-      <alias>water button</alias>
-      <displayverbs type="stringlist">
-        <value>Push</value>
-      </displayverbs>
-      <inventoryverbs type="stringlist" />
-      <push type="script">
-        msg ("You died!")
-        finish
-      </push>
-    </object>
     <object name="Atmospheric Stabilizer">
       <inherit name="editor_object" />
       <visible type="boolean">false</visible>
@@ -345,7 +384,11 @@
       </inventoryverbs>
       <take />
       <feature_usegive />
+      <alias>atmospheric stabilizer</alias>
     </object>
+    <exit alias="view panel" to="Panel">
+      <inherit name="indirection" />
+    </exit>
   </object>
   <object name="room5">
     <inherit name="editor_room" />
@@ -360,7 +403,11 @@
         <value>Drop</value>
       </inventoryverbs>
       <take />
+      <alias>energy core</alias>
     </object>
+    <exit alias="south" to="room3">
+      <inherit name="southdirection" />
+    </exit>
   </object>
   <object name="room6">
     <inherit name="editor_room" />
@@ -375,23 +422,28 @@
         <value>Drop</value>
       </inventoryverbs>
       <take />
+      <alias>alien alloy</alias>
     </object>
     <exit alias="west" to="room2">
       <inherit name="westdirection" />
     </exit>
-    <exit alias="southeast" to="room7">
-      <inherit name="southeastdirection" />
-      <runscript />
-      <script type="script">
-        if (Got(Gravity Boots)) {
+    <object name="Southeast Locked Door">
+      <inherit name="editor_object" />
+      <alias>locked door (southeast)</alias>
+      <displayverbs type="stringlist" />
+      <inventoryverbs type="stringlist" />
+      <drop type="boolean">false</drop>
+      <feature_usegive />
+      <useon type="scriptdictionary">
+        <item key="Gravity Boots">
+          MakeObjectInvisible (Southeast Locked Door)
+          create exit ("southeast", room6, room7)
+          msg ("A tunnel going southeast opens. You explore it.")
           MoveObject (player, room7)
-          msg ("You are now in room 7")
-        }
-        else {
-          msg ("You can't go to room 7")
-        }
-      </script>
-    </exit>
+        </item>
+      </useon>
+      <visible />
+    </object>
   </object>
   <object name="room7">
     <inherit name="editor_room" />
@@ -446,6 +498,81 @@
       <inventoryverbs type="stringlist" />
       <alias>permafrost jewel</alias>
       <drop type="boolean">false</drop>
+      <feature_usegive />
+      <useon type="scriptdictionary">
+        <item key="Astrocite Pick">
+          msg ("The permafrost jewel falls on the floor. You take it.")
+          MakeObjectInvisible (Immovable Permafrost Jewel)
+          MakeObjectVisible (Movable Permafrost Jewel)
+          MoveObject (Movable Permafrost Jewel, player)
+        </item>
+      </useon>
+    </object>
+    <exit alias="north" to="room2">
+      <inherit name="northdirection" />
+    </exit>
+  </object>
+  <object name="Panel">
+    <inherit name="editor_room" />
+    <alias>panel</alias>
+    <dropdestination type="object">room4</dropdestination>
+    <descprefix>You are viewing the panel</descprefix>
+    <exit alias="exit panel" to="room4">
+      <inherit name="outdirection" />
+    </exit>
+    <object name="Earth Button">
+      <inherit name="editor_object" />
+      <alias>earth button</alias>
+      <displayverbs type="stringlist">
+        <value>Push</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <push type="script">
+        msg ("You died!")
+        finish
+      </push>
+    </object>
+    <object name="Air Button">
+      <inherit name="editor_object" />
+      <alias>air button</alias>
+      <displayverbs type="stringlist">
+        <value>Push</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <push type="script">
+        msg ("An atmospheric stabilizer appears. You take it.")
+        MakeObjectVisible (Atmospheric Stabilizer)
+        MoveObject (Atmospheric Stabilizer, player)
+      </push>
+    </object>
+    <object name="Fire Button">
+      <inherit name="editor_object" />
+      <alias>fire button</alias>
+      <displayverbs type="stringlist">
+        <value>Push</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <push type="script">
+        msg ("You died!")
+        finish
+      </push>
+    </object>
+    <object name="Water Button">
+      <inherit name="editor_object" />
+      <alias>water button</alias>
+      <displayverbs type="stringlist">
+        <value>Push</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <push type="script">
+        msg ("You died!")
+        finish
+      </push>
     </object>
   </object>
+  <verb>
+    <property>useon</property>
+    <pattern>use on</pattern>
+    <defaultexpression>"You can't use on " + object.article + "."</defaultexpression>
+  </verb>
 </asl>
