@@ -355,7 +355,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
   <object name="room4">
     <inherit name="editor_room" />
     <alias>fourth room</alias>
-    <description>There is puzzle stand in front of you. Looks like you have some work to do.</description>
+    <description><![CDATA[Upon crossing the threshold, a vast interior unfolds. There are four steles clad in obsidian-colored panels stand in front of you surrounded by chaotic eerie crimson energy. The overall design exudes a sense of foreboding, indicting you have to be careful every step you take. <i><b>WATCH OUT YOU MIGHT DIE</b></i>]]></description>
     <dropdestination type="object">room4</dropdestination>
     <exit alias="east" to="room3">
       <inherit name="eastdirection" />
@@ -493,8 +493,7 @@ The Energy Core, a luminescent orb encapsulated in a lattice of alien metals, pu
       </inventoryverbs>
       <take />
       <alias>alien alloy</alias>
-      <look>This is one of three important components to fix your spaceship.
-It's is a marvel of extraterrestrial engineering, shimmering with an otherworldly sheen that defies earthly metallurgy. Its composition is unknown, light yet unyielding, suggesting it was forged in the heart of distant stars.</look>
+      <look>This is one of three important components to fix your spaceship. It’s a marvel of extraterrestrial engineering, shimmering with an otherworldly sheen that defies earthly metallurgy. Its composition is unknown, light yet unyielding, suggesting it was forged in the heart of distant stars.</look>
     </object>
     <exit alias="west" to="room2">
       <inherit name="westdirection" />
@@ -509,7 +508,7 @@ It's is a marvel of extraterrestrial engineering, shimmering with an otherworldl
       <drop type="boolean">false</drop>
       <feature_usegive />
       <visible />
-      <look>The passage between the rooms is daunting, a vertical ascent that stretches high above, seemingly unreachable by normal means.</look>
+      <look>There is a great gap between this room and the room on the otherside. The passage from one room to another descends sharply, dropping into a chasm like a cliff's face. The sheer drop appears too vast to navigate by ordinary means, hinting at the necessity for innovative solutions or special equipment to safely traverse the gap. </look>
       <scenery type="boolean">false</scenery>
       <usedefaultprefix />
       <useon type="scriptdictionary">
@@ -576,9 +575,11 @@ You can see a box shape in the front and walk towards it.</description>
         <visible />
         <displayverbs type="stringlist">
           <value>Take</value>
+          <value>look at</value>
         </displayverbs>
         <inventoryverbs type="stringlist">
           <value>Drop</value>
+          <value>look at</value>
         </inventoryverbs>
         <take />
         <selfuseon type="scriptdictionary">
@@ -587,6 +588,7 @@ You can see a box shape in the front and walk towards it.</description>
             MakeObjectVisible (Movable Permafrost Jewel)
           </item>
         </selfuseon>
+        <look>Its handle vibrates with a subtle, otherworldly energy, hinting at its capability to mine through celestial materials previously deemed indestructible.</look>
       </object>
     </object>
     <object name="LockedBoxKey">
