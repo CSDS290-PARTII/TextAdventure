@@ -103,6 +103,8 @@
         <inventoryverbs type="stringlist">
           <value>Drop</value>
         </inventoryverbs>
+        <look>The Translation Prism, a marvel of alien engineering, has the unique ability to decipher and translate the enigmatic symbols of an ancient alien language. Crafted from a translucent material that seems to be wearable.
+Gravity boots: The boots, suspended in a cushion of air, appeared capable of flight, as if they were designed to defy gravity itself.</look>
       </object>
     </object>
   </object>
@@ -123,7 +125,9 @@
       <inherit name="editor_object" />
       <inherit name="container_open" />
       <alias>fusion</alias>
-      <displayverbs type="stringlist" />
+      <displayverbs type="stringlist">
+        <value>look at</value>
+      </displayverbs>
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
       <attr name="feature_container" type="boolean">false</attr>
@@ -190,12 +194,14 @@
           }
         </item>
       </useon>
+      <look>At the heart of the chamber pulses the Fusion Core, an enigmatic device designed to harmonize three pivotal elements. At the heart of the chamber pulses the Fusion Core, an enigmatic device designed to harmonize three pivotal elements.</look>
     </object>
     <object name="Repairing Agent">
       <inherit name="editor_object" />
       <attr name="feature_usegive" type="boolean">false</attr>
       <displayverbs type="stringlist">
         <value>Take</value>
+        <value>look at</value>
       </displayverbs>
       <inventoryverbs type="stringlist">
         <value>Drop</value>
@@ -209,6 +215,7 @@
           finish
         </item>
       </selfuseon>
+      <look>It may fix the ship!!</look>
     </object>
     <object name="East Locked Door">
       <inherit name="editor_object" />
@@ -233,7 +240,9 @@
     <object name="South Locked Door">
       <inherit name="editor_object" />
       <alias>locked door (south)</alias>
-      <displayverbs type="stringlist" />
+      <displayverbs type="stringlist">
+        <value>look at</value>
+      </displayverbs>
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
       <feature_usegive />
@@ -245,6 +254,7 @@
           MoveObject (player, room8)
         </item>
       </useon>
+      <look>The threshold to the room lies beneath an icy veil, the air so frigid it seems to freeze time itself. Breathing becomes a challenge, each inhale a sharp reminder of the room's forbidding cold.</look>
     </object>
   </object>
   <object name="room3">
@@ -301,7 +311,9 @@
     <object name="North Locked Door">
       <inherit name="editor_object" />
       <alias>locked door (north)</alias>
-      <displayverbs type="stringlist" />
+      <displayverbs type="stringlist">
+        <value>look at</value>
+      </displayverbs>
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
       <feature_usegive />
@@ -313,6 +325,7 @@
           MoveObject (player, room5)
         </item>
       </useon>
+      <look>Approaching the room, a wave of oppressive heat washes over you, a forewarning of the scorching environment beyond its entrance. The air shimmers, distorted by the intense temperature, hinting at an interior far too hot for unaided entry.</look>
     </object>
     <object name="HintStone">
       <inherit name="editor_object" />
@@ -462,6 +475,7 @@
     <inherit name="editor_room" />
     <alias>sixth room</alias>
     <dropdestination type="object">room6</dropdestination>
+    <description>At the summit of the towering mountain, the world below seemed miniature.</description>
     <object name="Alien Alloy">
       <inherit name="editor_object" />
       <displayverbs type="stringlist">
@@ -489,7 +503,7 @@
       <drop type="boolean">false</drop>
       <feature_usegive />
       <visible />
-      <look>There is a great gap between this room and the room on the otherside</look>
+      <look>The passage between the rooms is daunting, a vertical ascent that stretches high above, seemingly unreachable by normal means.</look>
       <scenery type="boolean">false</scenery>
       <usedefaultprefix />
       <useon type="scriptdictionary">
@@ -506,6 +520,8 @@
     <inherit name="editor_room" />
     <alias>seventh room</alias>
     <dropdestination type="object">room7</dropdestination>
+    <description>The desolate and empty place stretched out before you, a vast expanse of barren land that seemed to defy life itself.
+You can see a box shape in the front and walk towards it.</description>
     <exit alias="northwest" to="room6">
       <inherit name="northwestdirection" />
     </exit>
@@ -580,6 +596,7 @@
     <inherit name="editor_room" />
     <alias>eighth room</alias>
     <dropdestination type="object">room8</dropdestination>
+    <description>As the biting wind howled through the barren place, you trudged through the thick blanket of snow.</description>
     <object name="Movable Permafrost Jewel">
       <inherit name="editor_object" />
       <displayverbs type="stringlist">
