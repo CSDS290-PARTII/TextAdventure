@@ -109,8 +109,10 @@
   <object name="room2">
     <inherit name="editor_room" />
     <alias>second room</alias>
-    <description type="string"></description>
+    <description><![CDATA[The fusion is in the middle of the room. A chill breeze, a whisper of the south's icy secrets, caresses your skin. Paths diverge from here:<br/><br/>to the West, it's the place where you came.<br/><br/>Towards the East, a high vantage bathed in a soft, twinking glow.<br/><br/>North, where an open door beckons with the promise of passage.<br/><br/>And to the South, from whence the cold wind comes, hinting at frozen mysteries waiting to be unveiled.]]></description>
     <dropdestination type="object">room2</dropdestination>
+    <usedefaultprefix type="boolean">false</usedefaultprefix>
+    <prefix> the second room</prefix>
     <exit alias="west" to="room1">
       <inherit name="westdirection" />
     </exit>
@@ -248,8 +250,9 @@
   <object name="room3">
     <inherit name="editor_room" />
     <alias>third room</alias>
-    <description type="string"></description>
+    <description><![CDATA[Inside, a peculiar bone rest. Adorning its feet, unusual boots hint at tales untold.<br/><br/>Before you, a wave of heat billows from the north, the air shimmering with intensity. The path is barred by an insufferable heat.]]></description>
     <dropdestination type="object">room3</dropdestination>
+    <objectslistprefix>In the center of the room, You can see</objectslistprefix>
     <exit alias="south" to="room2">
       <inherit name="southdirection" />
     </exit>
