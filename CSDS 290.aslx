@@ -540,6 +540,9 @@
           }
         </item>
       </useon>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+      </displayverbs>
       <object name="Astrocite Pick">
         <inherit name="editor_object" />
         <feature_usegive />
