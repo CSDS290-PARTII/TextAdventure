@@ -258,7 +258,7 @@
     </exit>
     <object name="Capsule">
       <inherit name="editor_object" />
-      <inherit name="openable" />
+      <inherit name="container_closed" />
       <listalias type="string"></listalias>
       <displayverbs type="stringlist">
         <value>open</value>
@@ -278,6 +278,11 @@
           RemoveObject (Capsule)
         }
       </openscript>
+      <open type="boolean">false</open>
+      <onopen type="script">
+        AddToInventory (Gravity Boots)
+        msg ("You have Gravity Boots now")
+      </onopen>
       <object name="Gravity Boots">
         <inherit name="editor_object" />
         <displayverbs type="stringlist">
@@ -304,6 +309,30 @@
           msg ("A tunnel going north opens. You explore it.")
           MoveObject (player, room5)
         </item>
+      </useon>
+    </object>
+    <object name="HintStone">
+      <inherit name="editor_object" />
+      <look>You don't understand the text on the stone</look>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <feature_usegive />
+      <useon type="scriptdictionary">
+        <item key="Translation Prism"><![CDATA[
+          msg ("Alien A: \"True progress can only be made by defying the pull of the surface.\"<br/>Alien B: \"Among us, only one speaks the truth, and the secret lies beneath our feet.\"<br/>Alien C: \"The key to descending safely lies not in wings, but in mastering gravity itself.\"<br/>Alien D: \"Two of us are lying, and without the right equipment, you shall fall.\"<br/>")
+          msg ("Who is lying?")
+          get input {
+            if (result = "A and B") {
+              HelperOpenObject (Capsule)
+              msg ("You now opened Capsule. Use the hints from Alien C and D.")
+            }
+            else {
+              msg ("That is incorrect")
+            }
+          }
+        ]]></item>
       </useon>
     </object>
   </object>
@@ -459,6 +488,7 @@
       <visible />
       <look>There is a great gap between this room and the room on the otherside</look>
       <scenery type="boolean">false</scenery>
+      <usedefaultprefix />
       <useon type="scriptdictionary">
         <item key="Gravity Boots">
           MakeObjectInvisible (Southeast Locked Door)
@@ -467,7 +497,6 @@
           MoveObject (player, room7)
         </item>
       </useon>
-      <usedefaultprefix />
     </object>
   </object>
   <object name="room7">
@@ -482,7 +511,7 @@
       <inherit name="container_closed" />
       <feature_usegive />
       <feature_container />
-      <open />
+      <open type="boolean">false</open>
       <close type="boolean">false</close>
       <onopen type="script">
         AddToInventory (Astrocite Pick)
@@ -534,6 +563,7 @@
     </object>
     <object name="LockedBoxKey">
       <inherit name="editor_object" />
+      <take />
     </object>
   </object>
   <object name="room8">
