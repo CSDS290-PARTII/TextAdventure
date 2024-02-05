@@ -342,7 +342,7 @@
   <object name="room4">
     <inherit name="editor_room" />
     <alias>fourth room</alias>
-    <description type="string"></description>
+    <description>There is puzzle stand in front of you. Looks like you have some work to do.</description>
     <dropdestination type="object">room4</dropdestination>
     <exit alias="east" to="room3">
       <inherit name="eastdirection" />
