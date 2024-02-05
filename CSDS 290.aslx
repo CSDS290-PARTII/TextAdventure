@@ -621,7 +621,8 @@ You can see a box shape in the front and walk towards it.</description>
       <take />
       <feature_usegive />
       <givesingle type="boolean">false</givesingle>
-      <look>This is one of the important components to fix your spaceship.</look>
+      <look>This is one of the important components to fix your spaceship.
+Its icy core, encased in a crystalline shell, harnesses the cold of the cosmos, making it indispensable in recalibrating and stabilizing the energy flows within the spacecraft's damaged mechanisms.</look>
     </object>
     <object name="Immovable Permafrost Jewel">
       <inherit name="editor_object" />
@@ -659,7 +660,7 @@ You can see a box shape in the front and walk towards it.</description>
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <push type="script">
-        msg ("You died!")
+        msg ("Roar grows steadily louder, suddenly, a blinding flash illuminates the horizon. You died!")
         finish
       </push>
     </object>
@@ -684,7 +685,7 @@ You can see a box shape in the front and walk towards it.</description>
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <push type="script">
-        msg ("You died!")
+        msg ("Roar grows steadily louder, suddenly, a blinding flash illuminates the horizon. You died!")
         finish
       </push>
     </object>
@@ -696,7 +697,7 @@ You can see a box shape in the front and walk towards it.</description>
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <push type="script">
-        msg ("You died!")
+        msg ("Roar grows steadily louder, suddenly, a blinding flash illuminates the horizon. You died!")
         finish
       </push>
     </object>
