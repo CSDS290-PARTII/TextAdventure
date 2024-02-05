@@ -110,9 +110,9 @@
     <inherit name="editor_room" />
     <alias>second room</alias>
     <description><![CDATA[The fusion is in the middle of the room. A chill breeze, a whisper of the south's icy secrets, caresses your skin. Paths diverge from here:<br/><br/>to the West, it's the place where you came.<br/><br/>Towards the East, a high vantage bathed in a soft, twinking glow.<br/><br/>North, where an open door beckons with the promise of passage.<br/><br/>And to the South, from whence the cold wind comes, hinting at frozen mysteries waiting to be unveiled.]]></description>
-    <dropdestination type="object">room2</dropdestination>
     <usedefaultprefix type="boolean">false</usedefaultprefix>
     <prefix> the second room</prefix>
+    <dropdestination type="object">room2</dropdestination>
     <exit alias="west" to="room1">
       <inherit name="westdirection" />
     </exit>
@@ -251,8 +251,8 @@
     <inherit name="editor_room" />
     <alias>third room</alias>
     <description><![CDATA[Inside, a peculiar bone rest. Adorning its feet, unusual boots hint at tales untold.<br/><br/>Before you, a wave of heat billows from the north, the air shimmering with intensity. The path is barred by an insufferable heat.]]></description>
-    <dropdestination type="object">room3</dropdestination>
     <objectslistprefix>In the center of the room, You can see</objectslistprefix>
+    <dropdestination type="object">room3</dropdestination>
     <exit alias="south" to="room2">
       <inherit name="southdirection" />
     </exit>
@@ -274,6 +274,7 @@
       <alias>capsule</alias>
       <take type="boolean">false</take>
       <isopen type="boolean">false</isopen>
+      <open type="boolean">false</open>
       <openscript type="script">
         if (Contains (Capsule,Gravity Boots)) {
           AddToInventory (Gravity Boots)
@@ -281,7 +282,6 @@
           RemoveObject (Capsule)
         }
       </openscript>
-      <open type="boolean">false</open>
       <onopen type="script">
         AddToInventory (Gravity Boots)
         msg ("You have Gravity Boots now")
@@ -516,6 +516,9 @@
       <feature_container />
       <open type="boolean">false</open>
       <close type="boolean">false</close>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+      </displayverbs>
       <onopen type="script">
         AddToInventory (Astrocite Pick)
       </onopen>
@@ -543,9 +546,6 @@
           }
         </item>
       </useon>
-      <displayverbs type="stringlist">
-        <value>Look at</value>
-      </displayverbs>
       <object name="Astrocite Pick">
         <inherit name="editor_object" />
         <feature_usegive />
@@ -570,6 +570,10 @@
     <object name="LockedBoxKey">
       <inherit name="editor_object" />
       <take />
+      <inventoryverbs type="stringlist">
+        <value>Look at</value>
+        <value>Drop</value>
+      </inventoryverbs>
     </object>
   </object>
   <object name="room8">
