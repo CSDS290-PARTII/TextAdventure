@@ -437,13 +437,16 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <visible type="boolean">false</visible>
       <displayverbs type="stringlist">
         <value>Take</value>
+        <value>look at</value>
       </displayverbs>
       <inventoryverbs type="stringlist">
         <value>Drop</value>
+        <value>look at</value>
       </inventoryverbs>
       <take />
       <feature_usegive />
       <alias>atmospheric stabilizer</alias>
+      <look>a device veiled in a soft, pulsating glow. Its sleek surface, adorned with intricate circuits and glyphs, hums quietly, a testament to its power to master the elements.</look>
     </object>
     <exit alias="view panel" to="Panel">
       <inherit name="indirection" />
@@ -453,6 +456,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
     <inherit name="editor_room" />
     <alias>fifth room</alias>
     <dropdestination type="object">room5</dropdestination>
+    <description>As you step into the scorching environment, a wave of intense heat envelops you. The air feels thick and suffused with a relentless warmth. </description>
     <object name="Energy Core">
       <inherit name="editor_object" />
       <displayverbs type="stringlist">
@@ -465,7 +469,8 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       </inventoryverbs>
       <take />
       <alias>energy core</alias>
-      <look>This is one of three important components to fix your spaceship.</look>
+      <look>This is one of three important components to fix your spaceship.
+The Energy Core, a luminescent orb encapsulated in a lattice of alien metals, pulses with a vibrant energy. It's the heart of the power system, radiating a potent force that feels both ancient and advanced。</look>
     </object>
     <exit alias="south" to="room3">
       <inherit name="southdirection" />
@@ -488,7 +493,8 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       </inventoryverbs>
       <take />
       <alias>alien alloy</alias>
-      <look>This is one of three important components to fix your spaceship.</look>
+      <look>This is one of three important components to fix your spaceship.
+It's is a marvel of extraterrestrial engineering, shimmering with an otherworldly sheen that defies earthly metallurgy. Its composition is unknown, light yet unyielding, suggesting it was forged in the heart of distant stars.</look>
     </object>
     <exit alias="west" to="room2">
       <inherit name="westdirection" />
