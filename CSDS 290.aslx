@@ -557,7 +557,20 @@ You can see a box shape in the front and walk towards it.</description>
               get input {
                 if (result = "A mushroom") {
                   HelperOpenObject (LockedBox)
-                  msg ("You have the pick now")
+                  msg ("You have the Astrocite pick now")
+                }
+                else {
+                  msg ("That is incorrect, you have to try it again!")
+                }
+              }
+            }
+            else if (result = "G") {
+              msg ("You are correct! Let's move on to the next question!")
+              msg ("What kind of room has no doors or windows?")
+              get input {
+                if (result = "A mushroom") {
+                  HelperOpenObject (LockedBox)
+                  msg ("You have the Astrocite pick now")
                 }
                 else {
                   msg ("That is incorrect, you have to try it again!")
@@ -570,6 +583,7 @@ You can see a box shape in the front and walk towards it.</description>
           }
         </item>
       </useon>
+      <look>It contains something</look>
       <object name="Astrocite Pick">
         <inherit name="editor_object" />
         <feature_usegive />
@@ -601,6 +615,7 @@ You can see a box shape in the front and walk towards it.</description>
         <value>Look at</value>
         <value>Drop</value>
       </inventoryverbs>
+      <look>You use this to open the Locked Box</look>
     </object>
   </object>
   <object name="room8">
