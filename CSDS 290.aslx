@@ -229,7 +229,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
       <feature_usegive />
-      <look>There is a great gap between this room and the room on the otherside</look>
+      <look>The passage between the rooms is daunting, a vertical ascent that stretches high above, seemingly unreachable by normal means.</look>
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <useon type="scriptdictionary">
         <item key="Gravity Boots">
