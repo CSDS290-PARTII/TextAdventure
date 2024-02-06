@@ -30,8 +30,8 @@
     <usedefaultprefix type="boolean">false</usedefaultprefix>
     <dropdestination type="object">Crushed Place</dropdestination>
     <beforeenter type="script"><![CDATA[
-      msg ("When I was on my way to Earth, my spaceship spirals uncontrollably, its hull marred by the relentless assault of cosmic debris. I'm at the helm, fighting a losing battle with the controls, every flick of the switch, every twist of the knob, a desperate attempt to avert the inevitable. I know I could not save this spaceship anymore. The only thing that I'm begging God now is to keep me alive. ")
-      msg ("The impact is a symphony of destruction, metal tearing, and the world outside morphing into a blur of chaos. Luckily, I survived from this tremendous accident. Regardless of my injury, I only cares about one thing: <i>Where am I!!<i>")
+      msg ("When you was on your way to Earth, Your spaceship spirals uncontrollably, its hull marred by the relentless assault of cosmic debris. You are at the helm, fighting a losing battle with the controls, every flick of the switch, every twist of the knob, a desperate attempt to avert the inevitable. You know you could not save this spaceship anymore. The only thing that you are  begging God now is to keep you alive. ")
+      msg ("The impact is a symphony of destruction, metal tearing, and the world outside morphing into a blur of chaos. Luckily, You survived from this tremendous accident. Regardless of you injury, you only cares about one thing: <i>Where am I!!<i>")
     ]]></beforeenter>
     <object name="player">
       <inherit name="editor_object" />
@@ -107,7 +107,7 @@
           <value>Drop</value>
         </inventoryverbs>
         <look>The Translation Prism, a marvel of alien engineering, has the unique ability to decipher and translate the enigmatic symbols of an ancient alien language. Crafted from a translucent material that seems to be wearable.
-Gravity boots: The boots, suspended in a cushion of air, appeared capable of flight, as if they were designed to defy gravity itself.</look>
+Gravity boots: The boots, suspended in a cushion of air, appeared capable of flight, as if they were designed to defy gravity itself.        </look>
       </object>
     </object>
   </object>
@@ -115,9 +115,10 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
     <inherit name="editor_room" />
     <alias>second room</alias>
     <description><![CDATA[The fusion is in the middle of the room. A chill breeze, a whisper of the south's icy secrets, caresses your skin. Paths diverge from here:<br/><br/>to the West, it's the place where you came.<br/><br/>Towards the East, a high vantage bathed in a soft, twinking glow.<br/><br/>North, where an open door beckons with the promise of passage.<br/><br/>And to the South, from whence the cold wind comes, hinting at frozen mysteries waiting to be unveiled.]]></description>
-    <usedefaultprefix type="boolean">false</usedefaultprefix>
+    <usedefaultprefix />
     <prefix> the second room</prefix>
     <dropdestination type="object">room2</dropdestination>
+    <descprefix>You are in </descprefix>
     <exit alias="west" to="room1">
       <inherit name="westdirection" />
     </exit>
@@ -137,6 +138,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <open type="boolean">false</open>
       <close type="boolean">false</close>
       <feature_usegive />
+      <look>At the heart of the chamber pulses the Fusion Core, an enigmatic device designed to harmonize three pivotal elements. At the heart of the chamber pulses the Fusion Core, an enigmatic device designed to harmonize three pivotal elements.</look>
       <addscript type="script">
         if (Contains (Fusion,Alien Alloy)) {
           if (Contains (Fusion,Energy Core)) {
@@ -197,7 +199,6 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
           }
         </item>
       </useon>
-      <look>At the heart of the chamber pulses the Fusion Core, an enigmatic device designed to harmonize three pivotal elements. At the heart of the chamber pulses the Fusion Core, an enigmatic device designed to harmonize three pivotal elements.</look>
     </object>
     <object name="Repairing Agent">
       <inherit name="editor_object" />
@@ -212,13 +213,13 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <visible type="boolean">false</visible>
       <take />
       <alias>repairing agent</alias>
+      <look>It may fix the ship!!</look>
       <selfuseon type="scriptdictionary">
         <item key="Wreckage">
           msg ("Congratulations! You have successfully repaired your ship and escaped the planet.")
           finish
         </item>
       </selfuseon>
-      <look>It may fix the ship!!</look>
     </object>
     <object name="East Locked Door">
       <inherit name="editor_object" />
@@ -249,6 +250,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
       <feature_usegive />
+      <look>The threshold to the room lies beneath an icy veil, the air so frigid it seems to freeze time itself. Breathing becomes a challenge, each inhale a sharp reminder of the room's forbidding cold.</look>
       <useon type="scriptdictionary">
         <item key="Atmospheric Stabilizer">
           MakeObjectInvisible (South Locked Door)
@@ -257,7 +259,6 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
           MoveObject (player, room8)
         </item>
       </useon>
-      <look>The threshold to the room lies beneath an icy veil, the air so frigid it seems to freeze time itself. Breathing becomes a challenge, each inhale a sharp reminder of the room's forbidding cold.</look>
     </object>
   </object>
   <object name="room3">
@@ -320,6 +321,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
       <feature_usegive />
+      <look>Approaching the room, a wave of oppressive heat washes over you, a forewarning of the scorching environment beyond its entrance. The air shimmers, distorted by the intense temperature, hinting at an interior far too hot for unaided entry.</look>
       <useon type="scriptdictionary">
         <item key="Atmospheric Stabilizer">
           MakeObjectInvisible (North Locked Door)
@@ -328,7 +330,6 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
           MoveObject (player, room5)
         </item>
       </useon>
-      <look>Approaching the room, a wave of oppressive heat washes over you, a forewarning of the scorching environment beyond its entrance. The air shimmers, distorted by the intense temperature, hinting at an interior far too hot for unaided entry.</look>
     </object>
     <object name="HintStone">
       <inherit name="editor_object" />
@@ -458,8 +459,8 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
   <object name="room5">
     <inherit name="editor_room" />
     <alias>fifth room</alias>
-    <dropdestination type="object">room5</dropdestination>
     <description>As you step into the scorching environment, a wave of intense heat envelops you. The air feels thick and suffused with a relentless warmth. </description>
+    <dropdestination type="object">room5</dropdestination>
     <object name="Energy Core">
       <inherit name="editor_object" />
       <displayverbs type="stringlist">
@@ -473,7 +474,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <take />
       <alias>energy core</alias>
       <look>This is one of three important components to fix your spaceship.
-The Energy Core, a luminescent orb encapsulated in a lattice of alien metals, pulses with a vibrant energy. It's the heart of the power system, radiating a potent force that feels both ancient and advanced。</look>
+The Energy Core, a luminescent orb encapsulated in a lattice of alien metals, pulses with a vibrant energy. It's the heart of the power system, radiating a potent force that feels both ancient and advanced。      </look>
     </object>
     <exit alias="south" to="room3">
       <inherit name="southdirection" />
@@ -482,8 +483,8 @@ The Energy Core, a luminescent orb encapsulated in a lattice of alien metals, pu
   <object name="room6">
     <inherit name="editor_room" />
     <alias>sixth room</alias>
-    <dropdestination type="object">room6</dropdestination>
     <description>At the summit of the towering mountain, the world below seemed miniature.</description>
+    <dropdestination type="object">room6</dropdestination>
     <object name="Alien Alloy">
       <inherit name="editor_object" />
       <displayverbs type="stringlist">
@@ -527,9 +528,9 @@ The Energy Core, a luminescent orb encapsulated in a lattice of alien metals, pu
   <object name="room7">
     <inherit name="editor_room" />
     <alias>seventh room</alias>
-    <dropdestination type="object">room7</dropdestination>
     <description>The desolate and empty place stretched out before you, a vast expanse of barren land that seemed to defy life itself.
-You can see a box shape in the front and walk towards it.</description>
+You can see a box shape in the front and walk towards it.    </description>
+    <dropdestination type="object">room7</dropdestination>
     <exit alias="northwest" to="room6">
       <inherit name="northwestdirection" />
     </exit>
@@ -543,6 +544,7 @@ You can see a box shape in the front and walk towards it.</description>
       <displayverbs type="stringlist">
         <value>Look at</value>
       </displayverbs>
+      <look>It contains something</look>
       <onopen type="script">
         AddToInventory (Astrocite Pick)
       </onopen>
@@ -583,7 +585,6 @@ You can see a box shape in the front and walk towards it.</description>
           }
         </item>
       </useon>
-      <look>It contains something</look>
       <object name="Astrocite Pick">
         <inherit name="editor_object" />
         <feature_usegive />
@@ -599,13 +600,13 @@ You can see a box shape in the front and walk towards it.</description>
           <value>look at</value>
         </inventoryverbs>
         <take />
+        <look>Its handle vibrates with a subtle, otherworldly energy, hinting at its capability to mine through celestial materials previously deemed indestructible.</look>
         <selfuseon type="scriptdictionary">
           <item key="Immovable Permafrost Jewel">
             MakeObjectInvisible (Immovable Permafrost Jewel)
             MakeObjectVisible (Movable Permafrost Jewel)
           </item>
         </selfuseon>
-        <look>Its handle vibrates with a subtle, otherworldly energy, hinting at its capability to mine through celestial materials previously deemed indestructible.</look>
       </object>
     </object>
     <object name="LockedBoxKey">
@@ -621,8 +622,8 @@ You can see a box shape in the front and walk towards it.</description>
   <object name="room8">
     <inherit name="editor_room" />
     <alias>eighth room</alias>
-    <dropdestination type="object">room8</dropdestination>
     <description>As the biting wind howled through the barren place, you trudged through the thick blanket of snow.</description>
+    <dropdestination type="object">room8</dropdestination>
     <object name="Movable Permafrost Jewel">
       <inherit name="editor_object" />
       <displayverbs type="stringlist">
