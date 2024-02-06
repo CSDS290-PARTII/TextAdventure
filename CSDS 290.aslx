@@ -341,7 +341,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <feature_usegive />
       <useon type="scriptdictionary">
         <item key="Translation Prism"><![CDATA[
-          msg ("Alien A: \"True progress can only be made by defying the pull of the surface.\"<br/>Alien B: \"Among us, only one speaks the truth, and the secret lies beneath our feet.\"<br/>Alien C: \"The key to descending safely lies not in wings, but in mastering gravity itself.\"<br/>Alien D: \"Two of us are lying, and without the right equipment, you shall fall.\"<br/>")
+          msg ("Alien A: \"1+1=3.\"<br/>Alien B: \"Among us, no one speaks the truth, and the secret lies beneath our feet.\"<br/>Alien C: \"The key to descending safely lies not in wings, but in mastering gravity itself.\"<br/>Alien D: \"Two of us are lying, and without the right equipment, you shall fall.\"<br/>")
           msg ("Who is lying?")
           get input {
             if (result = "A and B") {
@@ -557,7 +557,11 @@ You can see a box shape in the front and walk towards it.    </description>
               msg ("You are correct! Let's move on to the next question!")
               msg ("What kind of room has no doors or windows?")
               get input {
-                if (result = "A mushroom") {
+                if (result = "mushroom") {
+                  HelperOpenObject (LockedBox)
+                  msg ("You have the Astrocite pick now")
+                }
+                else if (result = "A mushroom") {
                   HelperOpenObject (LockedBox)
                   msg ("You have the Astrocite pick now")
                 }
@@ -570,7 +574,11 @@ You can see a box shape in the front and walk towards it.    </description>
               msg ("You are correct! Let's move on to the next question!")
               msg ("What kind of room has no doors or windows?")
               get input {
-                if (result = "A mushroom") {
+                if (result = "mushroom") {
+                  HelperOpenObject (LockedBox)
+                  msg ("You have the Astrocite pick now")
+                }
+                else if (result = "A mushroom") {
                   HelperOpenObject (LockedBox)
                   msg ("You have the Astrocite pick now")
                 }
