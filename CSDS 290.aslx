@@ -15,7 +15,7 @@
       </item>
     </povstatusattributes>
     <showtitle />
-    <description>In this game you play as Cooper, a skilled space pilot, crash-landing on an uncharted planet because of an asteroid explosion. When Cooper woke up, he finds his aerocraft was landing in front of a giant remnants of a once-prosperous alien civilization. As a space pilot, he is fascinated with the alien relic. And he also finds that exploring the relic might be the only possible way to fix his aerocraft and get himself back to Earth. In this journey, Cooper will explore ancient ruins, harness alien technologies, and gather resources to repair his spacecraft and escape the planet.</description>
+    <description>In the game, you embody Cooper, a seasoned space pilot who crash-lands on an unknown planet due to an asteroid explosion. Awakening, Cooper discovers his spacecraft at the doorstep of an ancient, advanced alien civilization's ruins. Intrigued and determined, he realizes that delving into these relics to harness their technology and gather resources is his sole path to repair his craft and return to Earth. Cooper's adventure involves exploring ancient ruins and unlocking alien secrets to secure his escape.</description>
     <pov type="object">player</pov>
     <start type="script">
       play sound ("IMSLP849067-PMLP7506-luis-kolodin-plays-satie-s-gnossienne-no.1.mp3", false, true)
@@ -30,8 +30,8 @@
     <usedefaultprefix type="boolean">false</usedefaultprefix>
     <dropdestination type="object">Crushed Place</dropdestination>
     <beforeenter type="script"><![CDATA[
-      msg ("When you was on your way to Earth, Your spaceship spirals uncontrollably, its hull marred by the relentless assault of cosmic debris. You are at the helm, fighting a losing battle with the controls, every flick of the switch, every twist of the knob, a desperate attempt to avert the inevitable. You know you could not save this spaceship anymore. The only thing that you are  begging God now is to keep you alive. ")
-      msg ("The impact is a symphony of destruction, metal tearing, and the world outside morphing into a blur of chaos. Luckily, You survived from this tremendous accident. Regardless of you injury, you only cares about one thing: <i>Where am I!!<i>")
+      msg ("En route to Earth, your spaceship becomes a casualty of cosmic debris, spinning out of control with significant damage. At the controls, your frantic efforts to stabilize the ship—a series of switches flipped and knobs twisted—prove futile. Realizing the ship is beyond saving, your sole plea is for survival amidst the chaos.")
+      msg ("The crash is a chaotic symphony of destruction, with metal tearing and the outside world blurring into turmoil. Miraculously, you survive the catastrophic accident. Despite your injuries, your primary concern is clear: <i>Where am I?</i>")
     ]]></beforeenter>
     <object name="player">
       <inherit name="editor_object" />
@@ -51,7 +51,7 @@
       <alias>wreckage</alias>
       <useon type="scriptdictionary">
         <item key="Repairing Agent">
-          msg ("Congratulations, you've successfully repaired the ship and survived!")
+          msg ("Congratulations, your ship is repaired, and you've survived!")
           finish
         </item>
       </useon>
@@ -63,7 +63,7 @@
     <description type="string"></description>
     <dropdestination type="object">room1</dropdestination>
     <beforeenter type="script">
-      msg ("I look around, I know this is not earth's environment. I need to fix my spaceship to return to Earth. Due to the crash, there are three critical components of my spaceship are missing. I need to find them and fixed my spaceship.")
+      msg ("Surveying my surroundings, it's clear I'm not on Earth. My priority is fixing my spaceship for the return journey. The crash resulted in the loss of three critical spaceship components. I must locate and repair these to make my spacecraft operational again.")
     </beforeenter>
     <exit alias="outside" to="Crushed Place">
       <inherit name="westdirection" />
@@ -106,19 +106,18 @@
         <inventoryverbs type="stringlist">
           <value>Drop</value>
         </inventoryverbs>
-        <look>The Translation Prism, a marvel of alien engineering, has the unique ability to decipher and translate the enigmatic symbols of an ancient alien language. Crafted from a translucent material that seems to be wearable.
-Gravity boots: The boots, suspended in a cushion of air, appeared capable of flight, as if they were designed to defy gravity itself.        </look>
+        <look>The Translation Prism, an alien engineering marvel, deciphers ancient alien symbols, made from a wearable translucent material. Gravity Boots, floating on an air cushion, seem to enable flight, defying gravity.</look>
       </object>
     </object>
   </object>
   <object name="room2">
     <inherit name="editor_room" />
     <alias>second room</alias>
-    <description><![CDATA[The fusion is in the middle of the room. A chill breeze, a whisper of the south's icy secrets, caresses your skin. Paths diverge from here:<br/><br/>to the West, it's the place where you came.<br/><br/>Towards the East, a high vantage bathed in a soft, twinking glow.<br/><br/>North, where an open door beckons with the promise of passage.<br/><br/>And to the South, from whence the cold wind comes, hinting at frozen mysteries waiting to be unveiled.]]></description>
+    <description><![CDATA[The fusion core sits at the room's center, where a cool breeze hinting at the south's icy mysteries brushes against you. From here, paths lead in all directions:<br/><br/>- West, back to your point of origin.<br/><br/>- East, towards a high lookout illuminated by a soft, twinkling light.<br/><br/>- North, where an open door offers passage.<br/><br/>- South, the source of the cold wind, suggesting hidden frozen secrets to discover.]]></description>
     <usedefaultprefix />
     <prefix> the second room</prefix>
-    <dropdestination type="object">room2</dropdestination>
     <descprefix>You are in </descprefix>
+    <dropdestination type="object">room2</dropdestination>
     <exit alias="west" to="room1">
       <inherit name="westdirection" />
     </exit>
@@ -138,7 +137,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <open type="boolean">false</open>
       <close type="boolean">false</close>
       <feature_usegive />
-      <look>At the heart of the chamber pulses the Fusion Core, an enigmatic device designed to harmonize three pivotal elements. At the heart of the chamber pulses the Fusion Core, an enigmatic device designed to harmonize three pivotal elements.</look>
+      <look>The Fusion Core, an enigmatic device aimed at harmonizing three pivotal elements, thrums at the chamber's center.</look>
       <addscript type="script">
         if (Contains (Fusion,Alien Alloy)) {
           if (Contains (Fusion,Energy Core)) {
@@ -213,7 +212,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <visible type="boolean">false</visible>
       <take />
       <alias>repairing agent</alias>
-      <look>It may fix the ship!!</look>
+      <look>It may fix the ship!</look>
       <selfuseon type="scriptdictionary">
         <item key="Wreckage">
           msg ("Congratulations! You have successfully repaired your ship and escaped the planet.")
@@ -230,7 +229,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
       <feature_usegive />
-      <look>The passage between the rooms is daunting, a vertical ascent that stretches high above, seemingly unreachable by normal means.</look>
+      <look>The passage linking the rooms presents a daunting challenge: a vertical climb extending far upwards, appearing insurmountable by ordinary methods.</look>
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <useon type="scriptdictionary">
         <item key="Gravity Boots">
@@ -250,7 +249,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
       <feature_usegive />
-      <look>The threshold to the room lies beneath an icy veil, the air so frigid it seems to freeze time itself. Breathing becomes a challenge, each inhale a sharp reminder of the room's forbidding cold.</look>
+      <look>The entrance to the room is shrouded in an icy veil, with air so cold it feels as though time itself is frozen. Breathing turns laborious, each breath a sharp testament to the room's intense chill.</look>
       <useon type="scriptdictionary">
         <item key="Atmospheric Stabilizer">
           MakeObjectInvisible (South Locked Door)
@@ -264,7 +263,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
   <object name="room3">
     <inherit name="editor_room" />
     <alias>third room</alias>
-    <description><![CDATA[Inside, a peculiar bone rest. Adorning its feet, unusual boots hint at tales untold.<br/><br/>Before you, a wave of heat billows from the north, the air shimmering with intensity. The path is barred by an insufferable heat.]]></description>
+    <description><![CDATA[Inside, a strange bone rests, its feet adorned with unusual boots, suggesting untold stories.<br/><br/>Ahead, a wave of heat emanates from the north, the air shimmering with its intensity, making the path forward nearly unbearable due to the extreme heat.]]></description>
     <objectslistprefix>In the center of the room, You can see</objectslistprefix>
     <dropdestination type="object">room3</dropdestination>
     <exit alias="south" to="room2">
@@ -321,7 +320,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <inventoryverbs type="stringlist" />
       <drop type="boolean">false</drop>
       <feature_usegive />
-      <look>Approaching the room, a wave of oppressive heat washes over you, a forewarning of the scorching environment beyond its entrance. The air shimmers, distorted by the intense temperature, hinting at an interior far too hot for unaided entry.</look>
+      <look>As you approach the room, an oppressive wave of heat engulfs you, signaling the scorching conditions that lie beyond the entrance. The air, shimmering and distorted by the extreme heat, suggests an environment too intense for entry without protection.</look>
       <useon type="scriptdictionary">
         <item key="Atmospheric Stabilizer">
           MakeObjectInvisible (North Locked Door)
@@ -359,7 +358,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
   <object name="room4">
     <inherit name="editor_room" />
     <alias>fourth room</alias>
-    <description><![CDATA[Upon crossing the threshold, a vast interior unfolds. There are four steles clad in obsidian-colored panels stand in front of you surrounded by chaotic eerie crimson energy. The overall design exudes a sense of foreboding, indicting you have to be careful every step you take. <i><b>WATCH OUT YOU MIGHT DIE</b></i>]]></description>
+    <description><![CDATA[Upon entering, you're greeted by a vast space. Before you stand four steles, their surfaces clad in obsidian-colored panels, surrounded by a chaotic, eerie crimson energy. The design conveys a sense of danger, warning you to tread carefully. <i><b>WATCH OUT, YOU MIGHT DIE</i></b> is the silent but clear message.]]></description>
     <dropdestination type="object">room4</dropdestination>
     <exit alias="east" to="room3">
       <inherit name="eastdirection" />
@@ -450,7 +449,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       <take />
       <feature_usegive />
       <alias>atmospheric stabilizer</alias>
-      <look>a device veiled in a soft, pulsating glow. Its sleek surface, adorned with intricate circuits and glyphs, hums quietly, a testament to its power to master the elements.</look>
+      <look>A device, enveloped in a soft, pulsating glow, stands before you. Its sleek surface, embellished with intricate circuits and glyphs, hums quietly, signaling its capability to harness the elements with precision and power.</look>
     </object>
     <exit alias="view panel" to="Panel">
       <inherit name="indirection" />
@@ -459,7 +458,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
   <object name="room5">
     <inherit name="editor_room" />
     <alias>fifth room</alias>
-    <description>As you step into the scorching environment, a wave of intense heat envelops you. The air feels thick and suffused with a relentless warmth. </description>
+    <description>Entering the scorching environment, you're immediately enveloped by an intense wave of heat. The air is thick, charged with an unyielding warmth that permeates every breath.</description>
     <dropdestination type="object">room5</dropdestination>
     <object name="Energy Core">
       <inherit name="editor_object" />
@@ -473,8 +472,7 @@ Gravity boots: The boots, suspended in a cushion of air, appeared capable of fli
       </inventoryverbs>
       <take />
       <alias>energy core</alias>
-      <look>This is one of three important components to fix your spaceship.
-The Energy Core, a luminescent orb encapsulated in a lattice of alien metals, pulses with a vibrant energy. It's the heart of the power system, radiating a potent force that feels both ancient and advanced。      </look>
+      <look>This is one of the three critical components needed to repair your spaceship. The Energy Core, a glowing orb encased in an intricate framework of alien metals, throbs with dynamic energy. Serving as the central element of the power system, it emits a powerful force that merges the essence of both ancient wisdom and advanced technology.</look>
     </object>
     <exit alias="south" to="room3">
       <inherit name="southdirection" />
@@ -483,7 +481,7 @@ The Energy Core, a luminescent orb encapsulated in a lattice of alien metals, pu
   <object name="room6">
     <inherit name="editor_room" />
     <alias>sixth room</alias>
-    <description>At the summit of the towering mountain, the world below seemed miniature.</description>
+    <description>From the summit of the towering mountain, the world below appeared miniature, offering a vast, diminished perspective.</description>
     <dropdestination type="object">room6</dropdestination>
     <object name="Alien Alloy">
       <inherit name="editor_object" />
@@ -497,7 +495,7 @@ The Energy Core, a luminescent orb encapsulated in a lattice of alien metals, pu
       </inventoryverbs>
       <take />
       <alias>alien alloy</alias>
-      <look>This is one of three important components to fix your spaceship. It’s a marvel of extraterrestrial engineering, shimmering with an otherworldly sheen that defies earthly metallurgy. Its composition is unknown, light yet unyielding, suggesting it was forged in the heart of distant stars.</look>
+      <look>This component, essential for your spaceship's repair, showcases extraterrestrial engineering brilliance. It glimmers with an otherworldly sheen, challenging terrestrial metalwork. Its composition, both light and durable, hints at origins from the core of distant stars, a testament to its alien craftsmanship.</look>
     </object>
     <exit alias="west" to="room2">
       <inherit name="westdirection" />
@@ -512,7 +510,7 @@ The Energy Core, a luminescent orb encapsulated in a lattice of alien metals, pu
       <drop type="boolean">false</drop>
       <feature_usegive />
       <visible />
-      <look>There is a great gap between this room and the room on the otherside. The passage from one room to another descends sharply, dropping into a chasm like a cliff's face. The sheer drop appears too vast to navigate by ordinary means, hinting at the necessity for innovative solutions or special equipment to safely traverse the gap. </look>
+      <look>A significant gap separates this room from the one on the opposite side, with the passage between them descending steeply, akin to the face of a cliff, into a chasm. The vast drop seems impassable by ordinary means, suggesting the need for creative solutions or specialized equipment to safely cross the expanse.</look>
       <scenery type="boolean">false</scenery>
       <usedefaultprefix />
       <useon type="scriptdictionary">
@@ -528,8 +526,7 @@ The Energy Core, a luminescent orb encapsulated in a lattice of alien metals, pu
   <object name="room7">
     <inherit name="editor_room" />
     <alias>seventh room</alias>
-    <description>The desolate and empty place stretched out before you, a vast expanse of barren land that seemed to defy life itself.
-You can see a box shape in the front and walk towards it.    </description>
+    <description>Before you stretches a desolate expanse, a vast and barren landscape seemingly inhospitable to life. In the distance, a box-like shape catches your eye, prompting you to walk towards it.</description>
     <dropdestination type="object">room7</dropdestination>
     <exit alias="northwest" to="room6">
       <inherit name="northwestdirection" />
@@ -600,7 +597,7 @@ You can see a box shape in the front and walk towards it.    </description>
           <value>look at</value>
         </inventoryverbs>
         <take />
-        <look>Its handle vibrates with a subtle, otherworldly energy, hinting at its capability to mine through celestial materials previously deemed indestructible.</look>
+        <look>The handle emits a subtle, otherworldly energy, suggesting it has the power to penetrate celestial materials once thought to be indestructible.</look>
         <selfuseon type="scriptdictionary">
           <item key="Immovable Permafrost Jewel">
             MakeObjectInvisible (Immovable Permafrost Jewel)
@@ -616,13 +613,13 @@ You can see a box shape in the front and walk towards it.    </description>
         <value>Look at</value>
         <value>Drop</value>
       </inventoryverbs>
-      <look>You use this to open the Locked Box</look>
+      <look>Use this to open the Locked Box</look>
     </object>
   </object>
   <object name="room8">
     <inherit name="editor_room" />
     <alias>eighth room</alias>
-    <description>As the biting wind howled through the barren place, you trudged through the thick blanket of snow.</description>
+    <description>As the biting wind howled across the barren landscape, you trudged through a thick blanket of snow, battling against the elements.</description>
     <dropdestination type="object">room8</dropdestination>
     <object name="Movable Permafrost Jewel">
       <inherit name="editor_object" />
@@ -640,7 +637,7 @@ You can see a box shape in the front and walk towards it.    </description>
       <take />
       <feature_usegive />
       <givesingle type="boolean">false</givesingle>
-      <look>This is one of the important components to fix your spaceship.</look>
+      <look>This is a crucial component needed for repairing your spaceship.</look>
     </object>
     <object name="Immovable Permafrost Jewel">
       <inherit name="editor_object" />
